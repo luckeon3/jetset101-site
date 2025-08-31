@@ -120,7 +120,7 @@ export const HeroSection = () => {
               <div className="text-sm">Members</div>
             </div>
             <div className="text-center">
-              <div className="text-lg font-bold text-white">Not an MLM</div>
+              <div className="text-lg font-bold text-white">No Minimums</div>
             </div>
           </div>
 
