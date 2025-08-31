@@ -190,7 +190,41 @@ backend:
         comment: "GET /api/advisors/program-details endpoint working correctly. Returns comprehensive program details including commission rates, benefits, and training modules."
 
 frontend:
-  # Frontend testing not performed as per instructions
+  - task: "Hero Section API Integration"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/HeroSection.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Updated HeroSection to use real API endpoints instead of mock data. Both membership signup and advisor signup forms now call /api/memberships and /api/advisors/apply respectively. Need to test form submissions work correctly."
+
+  - task: "Newsletter Component API Integration"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/Newsletter.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Updated Newsletter component to use real API endpoint /api/newsletter/subscribe instead of mock data. Need to test newsletter subscription form works correctly."
+
+  - task: "Overall Website Functionality"
+    implemented: true
+    working: "NA"
+    file: "Multiple components"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "JetSet 101 website completed with all features: dual-path design, membership benefits, advisor program, Brandon Torres story, FAQ, testimonials. Frontend uses real API endpoints. Need comprehensive testing of user flows."
 
 metadata:
   created_by: "testing_agent"
