@@ -133,7 +133,7 @@ export const mockData = {
     },
     {
       question: "How much can I save on travel?",
-      answer: "Members save up to 75% on flights, 40-70% on hotels at top brands, and enjoy cruises starting at $100 per day, subject to availability."
+      answer: "Members save up to 75% on flights, 40-70% on hotels at top brands, and enjoy cruises starting at $50 per day, subject to availability."
     },
     {
       question: "What are the membership options?",
