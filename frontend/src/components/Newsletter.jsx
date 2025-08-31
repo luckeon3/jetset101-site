@@ -19,11 +19,14 @@ export const Newsletter = () => {
     
     setLoading(true);
     try {
-      await mockHandlers.subscribeNewsletter(email);
-      toast.success('Successfully subscribed to our newsletter!');
+      const response = await axios.post(`${API}/newsletter/subscribe`, {
+        email: email
+      });
+      toast.success(response.data.message);
       setEmail('');
     } catch (error) {
-      toast.error('Something went wrong. Please try again.');
+      const message = error.response?.data?.message || 'Something went wrong. Please try again.';
+      toast.error(message);
     } finally {
       setLoading(false);
     }
