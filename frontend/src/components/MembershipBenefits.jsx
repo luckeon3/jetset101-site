@@ -77,7 +77,7 @@ export const MembershipBenefits = () => {
                     {[
                       'Up to 75% off flights',
                       '40-70% off hotels',
-                      'Cruises from $100/day',
+                      'Cruises from $50/day',
                       'Weekly deal roundups',
                       'Community access'
                     ].map((feature, index) => (
