@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Input } from './ui/input';
-import { Plane, TrendingUp, ArrowRight } from 'lucide-react';
+import { Plane, TrendingUp, ArrowRight, Play } from 'lucide-react';
 import { mockData } from '../mock';
 import { toast } from 'sonner';
 import axios from 'axios';
@@ -59,11 +59,11 @@ export const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={mockData.hero.backgroundImage}
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHw4fHx0cm9waWNhbCUyMHBhcmFkaXNlfGVufDB8fHx8MTc1NjY1NDQzM3ww&ixlib=rb-4.1.0&q=85"
           alt="JetSet 101 Hero"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/50"></div>
       </div>
 
       {/* Content */}
@@ -73,119 +73,114 @@ export const HeroSection = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               <span style={{ fontFamily: 'Poppins, sans-serif' }}>
-                Professional Travel Access
+                Travel Smarter. <span className="text-yellow-400">Earn More.</span><br />
+                <span className="text-white">Live Better.</span>
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
               <span style={{ fontFamily: 'Lato, sans-serif' }}>
-                Join JetSet 101's IATA-accredited travel platform for exclusive industry discounts and professional advisor opportunities with 70% commission
+                JetSet 101 gives you insider access to luxury travel perks & the tools to turn travel into a career.
               </span>
             </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button
+                size="lg"
+                className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-4 text-lg rounded-full transition-all duration-200 transform hover:scale-105"
+                onClick={() => document.querySelector('#membership').scrollIntoView({behavior: 'smooth'})}
+              >
+                Unlock Member Perks
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-black font-bold px-8 py-4 text-lg rounded-full transition-all duration-200 transform hover:scale-105"
+                onClick={() => document.querySelector('#advisor').scrollIntoView({behavior: 'smooth'})}
+              >
+                Become an Advisor
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
+
+            {/* Watch How It Works */}
+            <button className="inline-flex items-center text-white/80 hover:text-white transition-colors duration-200 mb-8">
+              <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mr-3 hover:bg-white/30 transition-all duration-200">
+                <Play className="w-5 h-5 ml-1" />
+              </div>
+              <span className="text-lg font-medium">Watch How It Works</span>
+            </button>
           </div>
 
-          {/* Dual Path Cards */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Membership Path */}
-            <Card className="relative p-8 bg-white/95 backdrop-blur-sm border-0 shadow-2xl transform hover:scale-105 transition-all duration-300">
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: '#FF6B6B' }}>
-                  <Plane className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
-                  Access Travel Benefits
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>
-                  Access exclusive industry deals with up to 75% off flights, 40-70% off hotels, and cruises from $100/day
-                </p>
-                
-                <form onSubmit={handleMembershipSignup} className="space-y-4">
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center items-center gap-8 mb-8 text-white/80">
+            <div className="flex items-center">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_travel-advisor-hub/artifacts/8nnhc2f1_iatan-pms541-300.jpg" 
+                alt="IATA Certified" 
+                className="h-8 w-auto mr-2"
+              />
+              <span className="text-sm font-medium">IATA Certified</span>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-yellow-400">10,000+</div>
+              <div className="text-sm">Members</div>
+            </div>
+            <div className="text-center">
+              <div className="text-lg font-bold text-white">Not an MLM</div>
+            </div>
+          </div>
+
+          {/* Quick Signup Forms */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Membership Quick Signup */}
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
+              <form onSubmit={handleMembershipSignup} className="space-y-4">
+                <h3 className="text-white font-bold text-lg mb-2">Quick Access to Member Perks</h3>
+                <div className="flex gap-2">
                   <Input
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder="Your email address"
                     value={membershipEmail}
                     onChange={(e) => setMembershipEmail(e.target.value)}
-                    className="border-gray-200 focus:border-[#FF6B6B] focus:ring-[#FF6B6B]"
+                    className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
                     required
                   />
                   <Button
                     type="submit"
                     disabled={loading.membership}
-                    className="w-full text-white font-semibold py-3"
-                    style={{ backgroundColor: '#FF6B6B' }}
+                    className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold whitespace-nowrap"
                   >
-                    {loading.membership ? 'Joining...' : 'Join Membership'}
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                    {loading.membership ? 'Joining...' : 'Get Access'}
                   </Button>
-                </form>
-                
-                <p className="text-sm text-gray-500 mt-4">
-                  Starting at $99/month • IATA accredited benefits
-                </p>
-              </div>
+                </div>
+              </form>
             </Card>
 
-            {/* Advisor Path */}
-            <Card className="relative p-8 bg-white/95 backdrop-blur-sm border-0 shadow-2xl transform hover:scale-105 transition-all duration-300">
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: '#00BFA6' }}>
-                  <TrendingUp className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
-                  Become Travel Advisor
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>
-                  Build your professional travel business with 70% commission, IATA registration, and comprehensive training
-                </p>
-                
-                <form onSubmit={handleAdvisorSignup} className="space-y-4">
+            {/* Advisor Quick Signup */}
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
+              <form onSubmit={handleAdvisorSignup} className="space-y-4">
+                <h3 className="text-white font-bold text-lg mb-2">Start Your Advisor Journey</h3>
+                <div className="flex gap-2">
                   <Input
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder="Your email address"
                     value={advisorEmail}
                     onChange={(e) => setAdvisorEmail(e.target.value)}
-                    className="border-gray-200 focus:border-[#00BFA6] focus:ring-[#00BFA6]"
+                    className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
                     required
                   />
                   <Button
                     type="submit"
                     disabled={loading.advisor}
-                    className="w-full text-white font-semibold py-3"
-                    style={{ backgroundColor: '#00BFA6' }}
+                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold whitespace-nowrap"
                   >
-                    {loading.advisor ? 'Applying...' : 'Become Advisor'}
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                    {loading.advisor ? 'Applying...' : 'Apply Now'}
                   </Button>
-                </form>
-                
-                <p className="text-sm text-gray-500 mt-4">
-                  Earn $1,000-5,000+ monthly • Professional certification
-                </p>
-              </div>
-            </Card>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-8 mt-12 text-white/80">
-            {mockData.stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold" style={{ color: '#00BFA6' }}>
-                  {stat.number}
                 </div>
-                <div className="text-sm uppercase tracking-wide">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* IATA Badge */}
-          <div className="text-center mt-8">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_travel-advisor-hub/artifacts/8nnhc2f1_iatan-pms541-300.jpg" 
-                alt="IATA Accredited" 
-                className="h-8 w-auto mr-3"
-              />
-              <span className="text-white text-sm font-medium">IATA Accredited Travel Agency</span>
-            </div>
+              </form>
+            </Card>
           </div>
         </div>
       </div>

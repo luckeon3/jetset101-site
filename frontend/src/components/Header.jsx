@@ -7,17 +7,21 @@ export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: 'Membership', href: '#membership' },
-    { label: 'Become Advisor', href: '#advisor' },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Our Story', href: '#story' },
-    { label: 'FAQ', href: '#faq' }
+    { label: 'Home', href: '#hero' },
+    { label: 'Travel Perks', href: '#membership' },
+    { label: 'Become an Advisor', href: '#advisor' },
+    { label: 'Member Stories', href: '#testimonials' },
+    { label: 'FAQs', href: '#faq' }
   ];
 
   const scrollToSection = (href) => {
-    const element = document.querySelector(href);
+    const element = document.querySelector(href === '#hero' ? 'body' : href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      if (href === '#hero') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMobileMenuOpen(false);
   };
@@ -28,7 +32,7 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm">
+            <div className="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center shadow-sm">
               <img 
                 src="https://customer-assets.emergentagent.com/job_travel-advisor-hub/artifacts/phv4p36p_White%20and%20Blue%20Modern%20Travel%20Agency%20Logo.PNG" 
                 alt="JetSet 101 Logo" 
@@ -54,18 +58,16 @@ export const Header = () => {
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-3">
             <Button
-              variant="outline"
-              onClick={() => scrollToSection('#advisor')}
-              className="border-[#00BFA6] text-[#00BFA6] hover:bg-[#00BFA6] hover:text-white transition-all duration-200"
+              variant="ghost"
+              className="text-gray-700 hover:text-[#003F5F]"
             >
-              Become Advisor
+              Login
             </Button>
             <Button
               onClick={() => scrollToSection('#membership')}
-              style={{ backgroundColor: '#FF6B6B' }}
-              className="hover:opacity-90 transition-opacity duration-200"
+              className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold"
             >
-              Join Membership
+              Join Now
             </Button>
           </div>
 
@@ -89,18 +91,16 @@ export const Header = () => {
                 ))}
                 <div className="flex flex-col space-y-3 pt-6 border-t">
                   <Button
-                    variant="outline"
-                    onClick={() => scrollToSection('#advisor')}
-                    className="border-[#00BFA6] text-[#00BFA6] hover:bg-[#00BFA6] hover:text-white"
+                    variant="ghost"
+                    className="justify-start text-gray-700"
                   >
-                    Become Advisor
+                    Login
                   </Button>
                   <Button
                     onClick={() => scrollToSection('#membership')}
-                    style={{ backgroundColor: '#FF6B6B' }}
-                    className="hover:opacity-90"
+                    className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold"
                   >
-                    Join Membership
+                    Join Now
                   </Button>
                 </div>
               </div>

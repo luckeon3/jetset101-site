@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 // Import all components
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
+import { TwoPathsSection } from "./components/TwoPathsSection";
 import { MembershipBenefits } from "./components/MembershipBenefits";
 import { AdvisorProgram } from "./components/AdvisorProgram";
 import { HowItWorks } from "./components/HowItWorks";
@@ -20,6 +21,7 @@ const Home = () => {
     <div className="min-h-screen">
       <Header />
       <HeroSection />
+      <TwoPathsSection />
       <MembershipBenefits />
       <AdvisorProgram />
       <HowItWorks />
