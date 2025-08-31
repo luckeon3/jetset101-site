@@ -51,7 +51,7 @@ async def get_membership_benefits():
             "monthly": {
                 "price": 99,
                 "period": "month",
-                "commitment": "3-month initial commitment",
+                "commitment": "6-month initial commitment",
                 "savings": "Start earning immediately"
             },
             "annual": {
