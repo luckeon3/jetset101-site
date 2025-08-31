@@ -88,7 +88,7 @@ export const MembershipBenefits = () => {
                     ))}
                   </div>
                   
-                  <button className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:opacity-90" style={{ backgroundColor: '#FF6B6B' }}>
+                  <button className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:opacity-90" style={{ backgroundColor: '#003F5F' }}>
                     Start Monthly Plan
                   </button>
                 </div>
