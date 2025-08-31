@@ -21,11 +21,15 @@ export const HeroSection = () => {
     
     setLoading(prev => ({ ...prev, membership: true }));
     try {
-      await mockHandlers.joinMembership({ email: membershipEmail });
-      toast.success('Welcome to JetSet 101! Check your email for next steps.');
+      const response = await axios.post(`${API}/memberships`, {
+        email: membershipEmail,
+        plan: 'annual' // Default to annual plan
+      });
+      toast.success(response.data.message);
       setMembershipEmail('');
     } catch (error) {
-      toast.error('Something went wrong. Please try again.');
+      const message = error.response?.data?.message || 'Something went wrong. Please try again.';
+      toast.error(message);
     } finally {
       setLoading(prev => ({ ...prev, membership: false }));
     }
@@ -37,11 +41,14 @@ export const HeroSection = () => {
     
     setLoading(prev => ({ ...prev, advisor: true }));
     try {
-      await mockHandlers.becomeAdvisor({ email: advisorEmail });
-      toast.success('Advisor application submitted! We\'ll be in touch soon.');
+      const response = await axios.post(`${API}/advisors/apply`, {
+        email: advisorEmail
+      });
+      toast.success(response.data.message);
       setAdvisorEmail('');
     } catch (error) {
-      toast.error('Something went wrong. Please try again.');
+      const message = error.response?.data?.message || 'Something went wrong. Please try again.';
+      toast.error(message);
     } finally {
       setLoading(prev => ({ ...prev, advisor: false }));
     }
