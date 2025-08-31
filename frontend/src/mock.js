@@ -2,8 +2,8 @@
 
 export const mockData = {
   hero: {
-    title: "Break Barriers, One Journey at a Time",
-    subtitle: "Join JetSet 101's exclusive travel membership community for up to 75% off flights, 40-70% off hotels, and earn 70% commission as a travel advisor",
+    title: "Professional Travel Access",
+    subtitle: "Join JetSet 101's IATA-accredited travel platform for exclusive industry discounts and professional advisor opportunities with 70% commission",
     backgroundImage: "https://images.unsplash.com/photo-1741795834736-27b331f7f4cb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxyZW1vdGUlMjB3b3JrJTIwdHJhdmVsfGVufDB8fHx8MTc1NjY1NDQzM3ww&ixlib=rb-4.1.0&q=85"
   },
 
