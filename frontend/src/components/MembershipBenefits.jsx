@@ -18,7 +18,7 @@ export const MembershipBenefits = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <Badge className="mb-4" style={{ backgroundColor: '#FF6B6B' }}>
+            <Badge className="mb-4" style={{ backgroundColor: '#003F5F' }}>
               Membership Benefits
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
