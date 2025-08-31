@@ -15,6 +15,7 @@ import { Testimonials } from "./components/Testimonials";
 import { FAQ } from "./components/FAQ";
 import { Newsletter } from "./components/Newsletter";
 import { Footer } from "./components/Footer";
+import { PaymentSuccess } from "./components/PaymentSuccess";
 
 const Home = () => {
   return (
@@ -39,9 +40,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
         </Routes>
       </BrowserRouter>
       <Toaster 

@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { Plane, Hotel, Ship, Users, CheckCircle } from 'lucide-react';
 import { mockData } from '../mock';
+import { toast } from 'sonner';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const iconMap = {
   Plane,
@@ -12,6 +17,43 @@ const iconMap = {
 };
 
 export const MembershipBenefits = () => {
+  const [loading, setLoading] = useState({ monthly: false, annual: false });
+
+  const handlePayment = async (planType) => {
+    const email = prompt('Please enter your email address to proceed with payment:');
+    if (!email) return;
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error('Please enter a valid email address');
+      return;
+    }
+
+    setLoading(prev => ({ ...prev, [planType]: true }));
+
+    try {
+      const response = await axios.post(`${API}/payments/checkout/session`, {
+        plan_type: planType,
+        user_email: email,
+        origin_url: window.location.origin
+      });
+
+      if (response.data.success) {
+        // Redirect to Stripe Checkout
+        window.location.href = response.data.checkout_url;
+      } else {
+        throw new Error('Failed to create checkout session');
+      }
+    } catch (error) {
+      console.error('Payment error:', error);
+      const message = error.response?.data?.detail || 'Failed to process payment. Please try again.';
+      toast.error(message);
+    } finally {
+      setLoading(prev => ({ ...prev, [planType]: false }));
+    }
+  };
+
   return (
     <section id="membership" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
@@ -57,7 +99,7 @@ export const MembershipBenefits = () => {
           {/* Pricing Cards */}
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Monthly Plan */}
-            <Card className="relative border-2 border-gray-200 hover:border-[#FF6B6B] transition-all duration-300">
+            <Card className="relative border-2 border-gray-200 hover:border-[#003F5F] transition-all duration-300">
               <CardContent className="p-8">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold mb-2" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
@@ -88,8 +130,13 @@ export const MembershipBenefits = () => {
                     ))}
                   </div>
                   
-                  <button className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:opacity-90" style={{ backgroundColor: '#003F5F' }}>
-                    Start Monthly Plan
+                  <button 
+                    onClick={() => handlePayment('monthly')}
+                    disabled={loading.monthly}
+                    className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:opacity-90 disabled:opacity-50" 
+                    style={{ backgroundColor: '#003F5F' }}
+                  >
+                    {loading.monthly ? 'Processing...' : 'Start Monthly Plan'}
                   </button>
                 </div>
               </CardContent>
@@ -133,8 +180,13 @@ export const MembershipBenefits = () => {
                     ))}
                   </div>
                   
-                  <button className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:opacity-90" style={{ backgroundColor: '#00BFA6' }}>
-                    Start Annual Plan
+                  <button 
+                    onClick={() => handlePayment('annual')}
+                    disabled={loading.annual}
+                    className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:opacity-90 disabled:opacity-50" 
+                    style={{ backgroundColor: '#00BFA6' }}
+                  >
+                    {loading.annual ? 'Processing...' : 'Start Annual Plan'}
                   </button>
                 </div>
               </CardContent>
@@ -147,7 +199,7 @@ export const MembershipBenefits = () => {
               * Individual use only • Non-transferable • Terms apply
             </p>
             <p className="text-sm text-gray-500">
-              Join thousands of travelers accessing professional travel benefits
+              Secure payment processing by Stripe • SSL encrypted
             </p>
           </div>
         </div>
