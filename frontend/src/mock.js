@@ -22,7 +22,7 @@ export const mockData = {
     },
     {
       icon: "Ship",
-      title: "Cruises from $100/day",
+      title: "Cruises from $50/day",
       description: "Sail the world's most beautiful destinations at unbeatable prices",
       savings: "Save $150-300 per day"
     },
