@@ -12,7 +12,7 @@ class PersonalInfo(BaseModel):
 # Membership Models
 class MembershipCreate(BaseModel):
     email: EmailStr
-    plan: str = Field(..., regex="^(monthly|annual)$")
+    plan: str = Field(..., pattern="^(monthly|annual)$")
     personalInfo: Optional[PersonalInfo] = None
 
 class Membership(BaseModel):
