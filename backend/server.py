@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi import FastAPI, APIRouter, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -7,6 +7,8 @@ import logging
 from pathlib import Path
 from models import *
 from services import *
+from payment_models import *
+from payment_services import PaymentService
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -17,7 +19,7 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
 # Create the main app without a prefix
-app = FastAPI(title="JetSet 101 API", description="Breaking barriers, one journey at a time")
+app = FastAPI(title="JetSet 101 API", description="Professional Travel Access Platform")
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
@@ -28,6 +30,7 @@ advisor_service = AdvisorService(db)
 newsletter_service = NewsletterService(db)
 contact_service = ContactService(db)
 content_service = ContentService(db)
+payment_service = PaymentService(db)
 
 # Health check endpoint
 @api_router.get("/")
@@ -55,7 +58,7 @@ async def get_membership_benefits():
                 "price": 1000,
                 "period": "year", 
                 "commitment": "Best Value - Save $188",
-                "savings": "Lock in member pricing"
+                "savings": "Lock in professional pricing"
             }
         },
         "benefits": [
@@ -70,7 +73,7 @@ async def get_membership_benefits():
                 "savings": "Save $200-500 per night"
             },
             {
-                "title": "Cruises from $100/day",
+                "title": "Cruises from $50/day",
                 "description": "Sail the world's most beautiful destinations at unbeatable prices",
                 "savings": "Save $150-300 per day"
             },
@@ -81,6 +84,61 @@ async def get_membership_benefits():
             }
         ]
     }
+
+# Payment endpoints
+@api_router.post("/payments/checkout/session")
+async def create_checkout_session(checkout_data: CheckoutRequest, request: Request):
+    """Create Stripe checkout session for membership payment"""
+    try:
+        # Get origin URL from request
+        origin_url = str(request.base_url).rstrip('/')
+        
+        session = await payment_service.create_checkout_session(
+            plan_type=checkout_data.plan_type,
+            user_email=checkout_data.user_email,
+            origin_url=origin_url
+        )
+        
+        return {
+            "success": True,
+            "checkout_url": session.url,
+            "session_id": session.session_id
+        }
+        
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        logger.error(f"Error creating checkout session: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to create checkout session")
+
+@api_router.get("/payments/checkout/status/{session_id}")
+async def get_checkout_status(session_id: str, request: Request):
+    """Get payment status for a checkout session"""
+    try:
+        origin_url = str(request.base_url).rstrip('/')
+        status = await payment_service.get_checkout_status(session_id, origin_url)
+        return status
+        
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        logger.error(f"Error getting checkout status: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to get payment status")
+
+@api_router.post("/webhook/stripe")
+async def stripe_webhook(request: Request):
+    """Handle Stripe webhook events"""
+    try:
+        webhook_body = await request.body()
+        stripe_signature = request.headers.get("Stripe-Signature")
+        origin_url = str(request.base_url).rstrip('/')
+        
+        result = await payment_service.handle_webhook(webhook_body, stripe_signature, origin_url)
+        return result
+        
+    except Exception as e:
+        logger.error(f"Error handling Stripe webhook: {str(e)}")
+        raise HTTPException(status_code=400, detail="Webhook processing failed")
 
 # Advisor endpoints
 @api_router.post("/advisors/apply", response_model=APIResponse)
@@ -190,7 +248,7 @@ async def get_faqs():
             },
             {
                 "question": "How much can I save on travel?",
-                "answer": "Members save up to 75% on flights, 40-70% on hotels at top brands, and enjoy cruises starting at $100 per day, subject to availability."
+                "answer": "Members save up to 75% on flights, 40-70% on hotels at top brands, and enjoy cruises starting at $50 per day, subject to availability."
             },
             {
                 "question": "What are the membership options?",
@@ -202,7 +260,7 @@ async def get_faqs():
             },
             {
                 "question": "Is there a refund policy?",
-                "answer": "Monthly memberships are non-refundable. Annual memberships can be refunded within 7 days if no discounts have been used."
+                "answer": "Monthly memberships are non-refundable. Annual memberships can be refunded within 3 days if no discounts have been used."
             },
             {
                 "question": "Can I share my membership benefits?",
