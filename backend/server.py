@@ -1,15 +1,12 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
-from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field
-from typing import List
-import uuid
-from datetime import datetime
-
+from models import *
+from services import *
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -20,37 +17,199 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
 # Create the main app without a prefix
-app = FastAPI()
+app = FastAPI(title="JetSet 101 API", description="Breaking barriers, one journey at a time")
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
+# Initialize services
+membership_service = MembershipService(db)
+advisor_service = AdvisorService(db)
+newsletter_service = NewsletterService(db)
+contact_service = ContactService(db)
+content_service = ContentService(db)
 
-# Define Models
-class StatusCheck(BaseModel):
-    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    client_name: str
-    timestamp: datetime = Field(default_factory=datetime.utcnow)
-
-class StatusCheckCreate(BaseModel):
-    client_name: str
-
-# Add your routes to the router instead of directly to app
+# Health check endpoint
 @api_router.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "JetSet 101 API is running!", "status": "healthy"}
 
-@api_router.post("/status", response_model=StatusCheck)
-async def create_status_check(input: StatusCheckCreate):
-    status_dict = input.dict()
-    status_obj = StatusCheck(**status_dict)
-    _ = await db.status_checks.insert_one(status_obj.dict())
-    return status_obj
+# Membership endpoints
+@api_router.post("/memberships", response_model=APIResponse)
+async def create_membership(membership_data: MembershipCreate):
+    """Create a new membership"""
+    return await membership_service.create_membership(membership_data)
 
-@api_router.get("/status", response_model=List[StatusCheck])
-async def get_status_checks():
-    status_checks = await db.status_checks.find().to_list(1000)
-    return [StatusCheck(**status_check) for status_check in status_checks]
+@api_router.get("/memberships/benefits")
+async def get_membership_benefits():
+    """Get membership benefits and pricing"""
+    return {
+        "plans": {
+            "monthly": {
+                "price": 99,
+                "period": "month",
+                "commitment": "3-month initial commitment",
+                "savings": "Start earning immediately"
+            },
+            "annual": {
+                "price": 1000,
+                "period": "year", 
+                "commitment": "Best Value - Save $188",
+                "savings": "Lock in member pricing"
+            }
+        },
+        "benefits": [
+            {
+                "title": "Up to 75% Off Flights",
+                "description": "Access exclusive flight deals and save thousands on your next adventure",
+                "savings": "Save up to $2,000 per trip"
+            },
+            {
+                "title": "40-70% Off Hotels",
+                "description": "Luxury accommodations at top brands with incredible member discounts",
+                "savings": "Save $200-500 per night"
+            },
+            {
+                "title": "Cruises from $100/day",
+                "description": "Sail the world's most beautiful destinations at unbeatable prices",
+                "savings": "Save $150-300 per day"
+            },
+            {
+                "title": "Exclusive Community",
+                "description": "Connect with fellow travelers and get insider tips from our community",
+                "savings": "Priceless networking"
+            }
+        ]
+    }
+
+# Advisor endpoints
+@api_router.post("/advisors/apply", response_model=APIResponse)
+async def apply_advisor(application_data: AdvisorApplicationCreate):
+    """Submit advisor application"""
+    return await advisor_service.create_advisor_application(application_data)
+
+@api_router.get("/advisors/program-details")
+async def get_advisor_program_details():
+    """Get advisor program details"""
+    return {
+        "commission_rate": 0.70,
+        "commission_display": "70%",
+        "benefits": [
+            {
+                "title": "70% Commission Split",
+                "description": "Keep 70% of all commissions you generate - industry-leading rates",
+                "earning": "Earn $1,000-5,000+ monthly"
+            },
+            {
+                "title": "Complete Training Program", 
+                "description": "Structured certification covering booking, marketing, and business ops",
+                "earning": "Professional certification"
+            },
+            {
+                "title": "Full Support System",
+                "description": "Marketing tools, booking platforms, and dedicated mentor support",
+                "earning": "Always supported"
+            },
+            {
+                "title": "Supplier Networks",
+                "description": "Access exclusive partnerships with VIP perks and enhanced commissions",
+                "earning": "Premium access"
+            }
+        ],
+        "training_modules": [
+            "Industry terminology and booking procedures",
+            "Business operations and client management", 
+            "Marketing strategies and social media",
+            "Niche travel specializations (cruises, groups)",
+            "Travel insurance and destination management",
+            "Real-time mentorship and community support"
+        ]
+    }
+
+# Newsletter endpoint
+@api_router.post("/newsletter/subscribe", response_model=APIResponse)
+async def subscribe_newsletter(subscription_data: NewsletterSubscriptionCreate):
+    """Subscribe to newsletter"""
+    return await newsletter_service.subscribe_newsletter(subscription_data)
+
+# Contact endpoint
+@api_router.post("/contact", response_model=APIResponse)
+async def create_contact_message(message_data: ContactMessageCreate):
+    """Submit contact form"""
+    return await contact_service.create_contact_message(message_data)
+
+# Content endpoints
+@api_router.get("/content/stats")
+async def get_stats():
+    """Get platform statistics"""
+    stats = await content_service.get_stats()
+    return {
+        "stats": [
+            {"number": f"{stats.active_members:,}+", "label": "Active Members"},
+            {"number": stats.avg_savings, "label": "Max Flight Savings"},
+            {"number": stats.advisor_earnings, "label": "Advisor Commission"},
+            {"number": stats.total_savings, "label": "Member Savings"}
+        ]
+    }
+
+@api_router.get("/content/testimonials")
+async def get_testimonials():
+    """Get testimonials"""
+    # For now, return static testimonials (can be made dynamic later)
+    return {
+        "testimonials": [
+            {
+                "name": "Sarah Johnson",
+                "role": "Travel Advisor",
+                "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzU2NjU0NDc2fDA&ixlib=rb-4.1.0&q=85",
+                "testimonial": "JetSet 101 transformed my passion for travel into a thriving business. The 70% commission split and incredible support system helped me earn over $4,000 in my first month!"
+            },
+            {
+                "name": "Michael Chen",
+                "role": "JetSet Member",
+                "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzU2NjU0NDc2fDA&ixlib=rb-4.1.0&q=85",
+                "testimonial": "I saved $1,800 on our family vacation to Europe! The exclusive deals and community support made planning our dream trip so much easier."
+            },
+            {
+                "name": "Lisa Rodriguez", 
+                "role": "Travel Advisor",
+                "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzU2NjU0NDc2fDA&ixlib=rb-4.1.0&q=85",
+                "testimonial": "The training program gave me everything I needed to succeed. Now I help others travel better while building my own profitable business from anywhere."
+            }
+        ]
+    }
+
+@api_router.get("/content/faqs")
+async def get_faqs():
+    """Get FAQs"""
+    return {
+        "faqs": [
+            {
+                "question": "What is JetSet 101?",
+                "answer": "JetSet 101 is an exclusive travel membership community that provides members with instant access to exclusive travel discounts on flights, hotels, and cruises, plus opportunities to earn as a travel advisor."
+            },
+            {
+                "question": "How much can I save on travel?",
+                "answer": "Members save up to 75% on flights, 40-70% on hotels at top brands, and enjoy cruises starting at $100 per day, subject to availability."
+            },
+            {
+                "question": "What are the membership options?",
+                "answer": "Monthly Membership: $99/month (requires 3-month initial commitment). Annual Membership: $1,000/year (Best Value - Save $188 vs monthly)."
+            },
+            {
+                "question": "How does the travel advisor program work?",
+                "answer": "Our travel advisors earn a 70/30 commission split (70% to you) with complete training, marketing support, booking tools, and ongoing mentorship."
+            },
+            {
+                "question": "Is there a refund policy?",
+                "answer": "Monthly memberships are non-refundable. Annual memberships can be refunded within 7 days if no discounts have been used."
+            },
+            {
+                "question": "Can I share my membership benefits?",
+                "answer": "No, JetSet 101 memberships are for individual use only. Sharing credentials may result in membership termination."
+            }
+        ]
+    }
 
 # Include the router in the main app
 app.include_router(api_router)
@@ -58,7 +217,7 @@ app.include_router(api_router)
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -70,6 +229,11 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+@app.on_event("startup")
+async def startup_event():
+    logger.info("JetSet 101 API starting up...")
+
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+    logger.info("JetSet 101 API shutting down...")
