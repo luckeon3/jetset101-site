@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Input } from './ui/input';
-import { Plane, TrendingUp, ArrowRight, Play } from 'lucide-react';
+import { Plane, TrendingUp, ArrowRight } from 'lucide-react';
 import { mockData } from '../mock';
 import { toast } from 'sonner';
 import axios from 'axios';
@@ -84,7 +84,7 @@ export const HeroSection = () => {
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button
                 size="lg"
                 className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-4 text-lg rounded-full transition-all duration-200 transform hover:scale-105"
@@ -103,14 +103,6 @@ export const HeroSection = () => {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
-
-            {/* Watch How It Works */}
-            <button className="inline-flex items-center text-white/80 hover:text-white transition-colors duration-200 mb-8">
-              <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mr-3 hover:bg-white/30 transition-all duration-200">
-                <Play className="w-5 h-5 ml-1" />
-              </div>
-              <span className="text-lg font-medium">Watch How It Works</span>
-            </button>
           </div>
 
           {/* Trust Indicators */}

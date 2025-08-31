@@ -32,13 +32,11 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center shadow-sm">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_travel-advisor-hub/artifacts/phv4p36p_White%20and%20Blue%20Modern%20Travel%20Agency%20Logo.PNG" 
-                alt="JetSet 101 Logo" 
-                className="h-10 w-10 object-contain"
-              />
-            </div>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_travel-advisor-hub/artifacts/phv4p36p_White%20and%20Blue%20Modern%20Travel%20Agency%20Logo.PNG" 
+              alt="JetSet 101 Logo" 
+              className="h-12 w-auto object-contain"
+            />
             <span className="font-bold text-xl" style={{ color: '#1A1A1A' }}>JetSet 101</span>
           </div>
 

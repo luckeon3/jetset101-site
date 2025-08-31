@@ -22,7 +22,7 @@ export const TwoPathsSection = () => {
               Two Paths. <span className="text-yellow-500">Unlimited Possibilities.</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>
-              Whether you're looking to travel smarter or build a career in travel, JetSet 101 opens doors to exclusive opportunities.
+              Whether you're looking to travel smarter and or build a career in travel, JetSet 101 opens doors to exclusive opportunities.
             </p>
           </div>
 
@@ -96,7 +96,7 @@ export const TwoPathsSection = () => {
               </div>
               <CardContent className="p-8">
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#FF6B6B' }}>
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#003F5F' }}>
                     <Briefcase className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
@@ -142,7 +142,7 @@ export const TwoPathsSection = () => {
                 </div>
 
                 <Button
-                  className="w-full bg-[#FF6B6B] hover:bg-[#FF6B6B]/90 text-white font-semibold py-3"
+                  className="w-full bg-[#003F5F] hover:bg-[#003F5F]/90 text-white font-semibold py-3"
                   onClick={() => scrollToSection('#advisor')}
                 >
                   Start Advisor Journey
