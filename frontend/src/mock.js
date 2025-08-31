@@ -145,7 +145,7 @@ export const mockData = {
     },
     {
       question: "Is there a refund policy?",
-      answer: "Monthly memberships are non-refundable. Annual memberships can be refunded within 7 days if no discounts have been used."
+      answer: "Monthly memberships are non-refundable. Annual memberships can be refunded within 3 days if no discounts have been used."
     },
     {
       question: "Can I share my membership benefits?",
