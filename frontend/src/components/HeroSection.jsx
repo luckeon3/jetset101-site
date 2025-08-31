@@ -4,11 +4,11 @@ import { Card } from './ui/card';
 import { Input } from './ui/input';
 import { Plane, TrendingUp, ArrowRight } from 'lucide-react';
 import { mockData } from '../mock';
+import { toast } from 'sonner';
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://travel-advisor-hub.preview.emergentagent.com';
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
-import { toast } from 'sonner';
 
 export const HeroSection = () => {
   const [membershipEmail, setMembershipEmail] = useState('');
@@ -73,12 +73,12 @@ export const HeroSection = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               <span style={{ fontFamily: 'Poppins, sans-serif' }}>
-                {mockData.hero.title}
+                Professional Travel Access
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
               <span style={{ fontFamily: 'Lato, sans-serif' }}>
-                {mockData.hero.subtitle}
+                Join JetSet 101's IATA-accredited travel platform for exclusive industry discounts and professional advisor opportunities with 70% commission
               </span>
             </p>
           </div>
@@ -92,10 +92,10 @@ export const HeroSection = () => {
                   <Plane className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
-                  Save on Travel
+                  Access Travel Benefits
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>
-                  Access exclusive deals with up to 75% off flights, 40-70% off hotels, and cruises from $100/day
+                  Access exclusive industry deals with up to 75% off flights, 40-70% off hotels, and cruises from $100/day
                 </p>
                 
                 <form onSubmit={handleMembershipSignup} className="space-y-4">
@@ -119,7 +119,7 @@ export const HeroSection = () => {
                 </form>
                 
                 <p className="text-sm text-gray-500 mt-4">
-                  Starting at $99/month • 7-day money back guarantee
+                  Starting at $99/month • IATA accredited benefits
                 </p>
               </div>
             </Card>
@@ -131,10 +131,10 @@ export const HeroSection = () => {
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
-                  Earn as Advisor
+                  Become Travel Advisor
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>
-                  Build your travel business with 70% commission split, complete training, and full support system
+                  Build your professional travel business with 70% commission, IATA registration, and comprehensive training
                 </p>
                 
                 <form onSubmit={handleAdvisorSignup} className="space-y-4">
@@ -158,7 +158,7 @@ export const HeroSection = () => {
                 </form>
                 
                 <p className="text-sm text-gray-500 mt-4">
-                  Earn $1,000-5,000+ monthly • Full training included
+                  Earn $1,000-5,000+ monthly • Professional certification
                 </p>
               </div>
             </Card>
@@ -174,6 +174,18 @@ export const HeroSection = () => {
                 <div className="text-sm uppercase tracking-wide">{stat.label}</div>
               </div>
             ))}
+          </div>
+
+          {/* IATA Badge */}
+          <div className="text-center mt-8">
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_travel-advisor-hub/artifacts/8nnhc2f1_iatan-pms541-300.jpg" 
+                alt="IATA Accredited" 
+                className="h-8 w-auto mr-3"
+              />
+              <span className="text-white text-sm font-medium">IATA Accredited Travel Agency</span>
+            </div>
           </div>
         </div>
       </div>

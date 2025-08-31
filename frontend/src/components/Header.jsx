@@ -27,10 +27,12 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#003F5F' }}>
-              <span className="text-white font-bold text-lg">J101</span>
-            </div>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_travel-advisor-hub/artifacts/phv4p36p_White%20and%20Blue%20Modern%20Travel%20Agency%20Logo.PNG" 
+              alt="JetSet 101 Logo" 
+              className="h-12 w-auto"
+            />
             <span className="font-bold text-xl" style={{ color: '#1A1A1A' }}>JetSet 101</span>
           </div>
 

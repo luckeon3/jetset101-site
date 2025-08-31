@@ -19,15 +19,31 @@ export const Footer = () => {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#00BFA6' }}>
-                <span className="text-white font-bold text-lg">J101</span>
-              </div>
+            <div className="flex items-center space-x-3 mb-6">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_travel-advisor-hub/artifacts/phv4p36p_White%20and%20Blue%20Modern%20Travel%20Agency%20Logo.PNG" 
+                alt="JetSet 101 Logo" 
+                className="h-10 w-auto"
+              />
               <span className="font-bold text-xl">JetSet 101</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>
-              Breaking barriers, one journey at a time. Making world-class travel accessible through exclusive discounts and earning opportunities.
+              IATA-accredited travel platform redefining access to professional travel benefits and advisor opportunities.
             </p>
+            
+            {/* IATA Badge */}
+            <div className="flex items-center bg-white/10 rounded-lg px-4 py-3 mb-6">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_travel-advisor-hub/artifacts/8nnhc2f1_iatan-pms541-300.jpg" 
+                alt="IATA Accredited" 
+                className="h-8 w-auto mr-3"
+              />
+              <div>
+                <div className="text-sm font-semibold">IATA Accredited</div>
+                <div className="text-xs text-gray-300">Professional Travel Agency</div>
+              </div>
+            </div>
+            
             <div className="flex space-x-4">
               <button className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#00BFA6] transition-colors duration-200 flex items-center justify-center">
                 <Facebook className="w-5 h-5" />
@@ -80,7 +96,7 @@ export const Footer = () => {
                 'Contact Support',
                 'Travel Resources',
                 'Advisor Training',
-                'Community Forum'
+                'IATA Advocacy'
               ].map((item) => (
                 <li key={item}>
                   <button className="text-gray-300 hover:text-[#00BFA6] transition-colors duration-200">
@@ -121,10 +137,10 @@ export const Footer = () => {
         {/* Quick CTA Section */}
         <div className="text-center mb-12">
           <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            Ready to Start Your Journey?
+            Ready to Access Professional Travel Benefits?
           </h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Join thousands of travelers saving money and earning commissions with JetSet 101
+            Join our IATA-accredited platform for exclusive industry access and advisor opportunities
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -132,7 +148,7 @@ export const Footer = () => {
               className="text-white font-semibold px-8 py-3"
               style={{ backgroundColor: '#FF6B6B' }}
             >
-              Join Membership
+              Access Benefits
             </Button>
             <Button
               onClick={() => scrollToSection('#advisor')}
@@ -149,7 +165,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2024 JetSet 101. All rights reserved.
+            © 2025 JetSet 101. All rights reserved. IATA Accredited Travel Agency.
           </div>
           <div className="flex flex-wrap gap-6 text-sm">
             <button className="text-gray-400 hover:text-white transition-colors duration-200">
@@ -162,7 +178,7 @@ export const Footer = () => {
               Cookie Policy
             </button>
             <button className="text-gray-400 hover:text-white transition-colors duration-200">
-              Refund Policy
+              IATA Compliance
             </button>
           </div>
         </div>
