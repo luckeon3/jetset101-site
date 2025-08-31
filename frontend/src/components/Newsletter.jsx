@@ -3,8 +3,11 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Card, CardContent } from './ui/card';
 import { Mail, ArrowRight, CheckCircle } from 'lucide-react';
-import { mockHandlers } from '../mock';
 import { toast } from 'sonner';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 export const Newsletter = () => {
   const [email, setEmail] = useState('');
