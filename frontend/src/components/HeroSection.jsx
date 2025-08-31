@@ -3,7 +3,11 @@ import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Input } from './ui/input';
 import { Plane, TrendingUp, ArrowRight } from 'lucide-react';
-import { mockData, mockHandlers } from '../mock';
+import { mockData } from '../mock';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 import { toast } from 'sonner';
 
 export const HeroSection = () => {
