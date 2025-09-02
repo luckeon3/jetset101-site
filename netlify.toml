@@ -1,0 +1,19 @@
+[build]
+  base = "frontend"
+  command = "yarn build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "18"
+  YARN_VERSION = "1.22.19"
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://travel-advisor-hub.preview.emergentagent.com/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
