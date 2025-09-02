@@ -11,6 +11,10 @@
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "https://travel-advisor-hub.preview.emergentagent.com/api/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "frontend/build/$1"
     }
