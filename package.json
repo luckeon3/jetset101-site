@@ -2,6 +2,10 @@
   "name": "jetset-101-frontend",
   "version": "1.0.0",
   "description": "JetSet 101 Travel Membership Platform - Frontend",
+  "engines": {
+    "node": ">=20.0.0",
+    "yarn": ">=1.22.0"
+  },
   "scripts": {
     "build": "cd frontend && yarn install && yarn build",
     "start": "cd frontend && yarn start",
