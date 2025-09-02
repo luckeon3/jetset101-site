@@ -1,9 +1,15 @@
 {
-  "name": "jetset-101",
+  "name": "jetset-101-frontend",
   "version": "1.0.0",
+  "description": "JetSet 101 Travel Membership Platform - Frontend",
   "scripts": {
     "build": "cd frontend && yarn install && yarn build",
-    "start": "cd frontend && yarn start"
+    "start": "cd frontend && yarn start",
+    "dev": "cd frontend && yarn start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luckeon3/jetset101-site"
   },
   "dependencies": {},
   "devDependencies": {}
