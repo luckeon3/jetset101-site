@@ -158,10 +158,15 @@ export const TwoPathsSection = () => {
               Not sure which path is right for you? No problem – you can always add advisor training later.
             </p>
             <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-[#003F5F] text-[#003F5F] hover:bg-[#003F5F] hover:text-white font-semibold px-8 py-3"
-            >
+             <Button
+  variant="outline"
+  size="lg"
+  className="border-2 border-[#003F5F] text-[#003F5F] hover:bg-[#003F5F] hover:text-white font-semibold py-3 px-6 rounded-md"
+  onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
+>
+  Book a Free Consultation
+</Button>
+
               Book a Free Consultation
             </Button>
           </div>
