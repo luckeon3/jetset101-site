@@ -171,7 +171,7 @@ export const HowItWorks = () => {
                     <li className="flex items-center">
                       <div className="w-2 h-2 rounded-full bg-[#003F5F] mr-3"></div>
                       <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
-                        Earn 70% commission on all bookings
+                        Earn 80% commission on all bookings
                       </span>
                     </li>
                     <li className="flex items-center">
