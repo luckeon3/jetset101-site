@@ -97,7 +97,7 @@ export const mockData = {
       },
       {
         step: 3,
-        title: "Earn 70% Commission",
+        title: "Earn 80% Commission",
         description: "Keep 80% of all commissions with reliable payment systems",
         icon: "DollarSign"
       }
