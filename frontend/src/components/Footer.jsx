@@ -141,7 +141,7 @@ export const Footer = () => {
                   <Mail className="w-5 h-5 text-yellow-500 mr-3 mt-0.5" />
                   <div>
                     <p className="text-gray-400" style={{ fontFamily: 'Lato, sans-serif' }}>
-                      support@jetset101.com
+                      Brandon@jetset101.com
                     </p>
                   </div>
                 </div>
@@ -149,7 +149,7 @@ export const Footer = () => {
                   <Phone className="w-5 h-5 text-yellow-500 mr-3 mt-0.5" />
                   <div>
                     <p className="text-gray-400" style={{ fontFamily: 'Lato, sans-serif' }}>
-                      1-800-JETSET1
+                      323.301.3533
                     </p>
                   </div>
                 </div>
@@ -157,8 +157,8 @@ export const Footer = () => {
                   <MapPin className="w-5 h-5 text-yellow-500 mr-3 mt-0.5" />
                   <div>
                     <p className="text-gray-400" style={{ fontFamily: 'Lato, sans-serif' }}>
-                      Miami, FL<br />
-                      United States
+                      4810 Serrania Ave<br />
+                      Woodland Hills, CA 91364
                     </p>
                   </div>
                 </div>
