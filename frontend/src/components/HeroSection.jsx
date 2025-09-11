@@ -82,7 +82,7 @@ export const HeroSection = () => {
               <Button
                 size="lg"
                 className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-4 text-lg rounded-full transition-all duration-200 transform hover:scale-105"
-                onClick={() => document.querySelector('#membership').scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
               >
                 Unlock Member Perks
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -91,7 +91,7 @@ export const HeroSection = () => {
                 size="lg"
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-black font-bold px-8 py-4 text-lg rounded-full transition-all duration-200 transform hover:scale-105"
-                onClick={() => document.querySelector('#advisor').scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
               >
                 Become an Advisor
                 <ArrowRight className="ml-2 w-5 h-5" />
