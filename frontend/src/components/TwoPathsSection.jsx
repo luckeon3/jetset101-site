@@ -144,7 +144,7 @@ export const TwoPathsSection = () => {
 
                 <Button
                   className="w-full bg-[#003F5F] hover:bg-[#003F5F]/90 text-white font-semibold py-3"
-                  onClick={() => scrollToSection('#advisor')}
+                  onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
                 >
                   Start Advisor Journey
                   <ArrowRight className="ml-2 w-4 h-4" />
