@@ -262,15 +262,9 @@ metadata:
   run_ui: true
 
 test_plan:
-  current_focus:
-    - "Header Navigation and Smooth Scrolling"
-    - "Hero Section Email Signup Forms"
-    - "CTA Buttons Functionality"
-    - "Two Paths Section Buttons"
-    - "Mobile Hamburger Menu"
-    - "Newsletter Signup Form"
-    - "FAQ Accordion Functionality"
-  stuck_tasks: []
+  current_focus: []
+  stuck_tasks:
+    - "Payment Success Page"
   test_all: true
   test_priority: "high_first"
 
