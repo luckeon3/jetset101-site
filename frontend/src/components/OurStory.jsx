@@ -89,7 +89,7 @@ export const OurStory = () => {
               <Button
                 size="lg"
                 className="bg-[#003F5F] hover:bg-[#003F5F]/90 text-white font-semibold py-3 px-8"
-                onClick={() => document.querySelector('#membership').scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
               >
                 Join Our Community
                 <ArrowRight className="ml-2 w-5 h-5" />
