@@ -115,7 +115,7 @@ export const HowItWorks = () => {
                 <Button
                   size="lg"
                   className="bg-[#003F5F] hover:bg-[#003F5F]/90 text-white font-semibold py-3 px-8 rounded-full"
-                  onClick={() => document.querySelector('#advisor').scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
                 >
                   Apply for Advisor Program
                 </Button>
