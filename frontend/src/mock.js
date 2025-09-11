@@ -37,8 +37,8 @@ export const mockData = {
   advisorBenefits: [
     {
       icon: "TrendingUp",
-      title: "70% Commission Split",
-      description: "Keep 70% of all commissions you generate - industry-leading rates",
+      title: "80% Commission Split",
+      description: "Keep 80% of all commissions you generate - industry-leading rates",
       earning: "Earn $1,000-5,000+ monthly"
     },
     {
