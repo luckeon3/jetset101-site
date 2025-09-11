@@ -55,38 +55,6 @@ export const Testimonials = () => {
               </Card>
             ))}
           </div>
-
-          {/* Trust Badges */}
-          <div className="bg-gradient-to-r from-[#003F5F] to-[#00BFA6] rounded-2xl p-8 text-white">
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                Trusted by Thousands
-              </h3>
-              <p className="text-lg opacity-90" style={{ fontFamily: 'Lato, sans-serif' }}>
-                Join our growing community of smart travelers and successful advisors
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-4 gap-6 text-center">
-              <div>
-                <div className="text-3xl font-bold text-yellow-400 mb-2">98%</div>
-                <div className="text-sm opacity-90">Satisfaction Rate</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-yellow-400 mb-2">$8,500</div>
-                <div className="text-sm opacity-90">Average Savings</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-yellow-400 mb-2">24/7</div>
-                <div className="text-sm opacity-90">Support Available</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-yellow-400 mb-2">IATA</div>
-                <div className="text-sm opacity-90">Accredited</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
