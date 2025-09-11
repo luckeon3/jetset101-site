@@ -78,7 +78,7 @@ export const HowItWorks = () => {
                 <Button
                   size="lg"
                   className="bg-[#00BFA6] hover:bg-[#00BFA6]/90 text-white font-semibold py-3 px-8 rounded-full"
-                  onClick={() => document.querySelector('#membership').scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
                 >
                   Start Your Membership Today
                 </Button>
