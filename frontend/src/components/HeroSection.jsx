@@ -15,37 +15,20 @@ export const HeroSection = () => {
     e.preventDefault();
     if (!membershipEmail) return;
     
-    setLoading(prev => ({ ...prev, membership: true }));
-    try {
-      const response = await mockHandlers.joinMembership({ 
-        email: membershipEmail,
-        plan: 'annual'
-      });
-      toast.success(response.message);
-      setMembershipEmail('');
-    } catch (error) {
-      toast.error('Something went wrong. Please try again.');
-    } finally {
-      setLoading(prev => ({ ...prev, membership: false }));
-    }
+    // Redirect to Calendly instead of mock signup
+    window.open("https://calendly.com/brandon-jetset101/", "_blank");
+    setMembershipEmail('');
+    toast.success("Redirecting to schedule your consultation!");
   };
 
   const handleAdvisorSignup = async (e) => {
     e.preventDefault();
     if (!advisorEmail) return;
     
-    setLoading(prev => ({ ...prev, advisor: true }));
-    try {
-      const response = await mockHandlers.becomeAdvisor({ 
-        email: advisorEmail 
-      });
-      toast.success(response.message);
-      setAdvisorEmail('');
-    } catch (error) {
-      toast.error('Something went wrong. Please try again.');
-    } finally {
-      setLoading(prev => ({ ...prev, advisor: false }));
-    }
+    // Redirect to Calendly instead of mock signup  
+    window.open("https://calendly.com/brandon-jetset101/", "_blank");
+    setAdvisorEmail('');
+    toast.success("Redirecting to schedule your consultation!");
   };
 
   return (
