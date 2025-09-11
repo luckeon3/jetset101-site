@@ -19,12 +19,11 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <span 
-              className="text-2xl font-bold text-gray-900" 
-              style={{ fontFamily: 'Poppins, sans-serif' }}
-            >
-              JetSet <span className="text-yellow-500">101</span>
-            </span>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/kcvuk1fn_White%20and%20Blue%20Modern%20Travel%20Agency%20Logo.PNG" 
+              alt="JetSet 101" 
+              className="h-10 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
