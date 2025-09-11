@@ -137,7 +137,7 @@ export const MembershipBenefits = () => {
               variant="outline"
               size="lg"
               className="border-2 border-[#00BFA6] text-[#00BFA6] hover:bg-[#00BFA6] hover:text-white font-semibold py-3 px-6"
-              onClick={() => scrollToSection('#how-it-works')}
+              onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
             >
               Learn How It Works
             </Button>
