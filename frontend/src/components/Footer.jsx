@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, LinkedIn, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
 export const Footer = () => {
   const scrollToSection = (href) => {
