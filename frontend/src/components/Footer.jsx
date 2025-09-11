@@ -39,7 +39,7 @@ export const Footer = () => {
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-yellow-500 transition-colors">
-                  <LinkedIn className="w-5 h-5" />
+                  <Mail className="w-5 h-5" />
                 </a>
               </div>
             </div>
