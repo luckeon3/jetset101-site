@@ -74,7 +74,7 @@ export const AdvisorProgram = () => {
                 <div className="text-sm opacity-80">Average First Year Potential</div>
               </div>
               <div>
-                <div className="text-4xl font-bold mb-2">70%</div>
+                <div className="text-4xl font-bold mb-2">80%</div>
                 <div className="text-sm opacity-80">Commission Split (You Keep)</div>
               </div>
               <div>
