@@ -141,10 +141,9 @@ export const HeroSection = () => {
                   />
                   <Button
                     type="submit"
-                    disabled={loading.advisor}
                     className="bg-blue-500 hover:bg-blue-600 text-white font-bold whitespace-nowrap"
                   >
-                    {loading.advisor ? 'Applying...' : 'Apply Now'}
+                    Apply Now
                   </Button>
                 </div>
               </form>
