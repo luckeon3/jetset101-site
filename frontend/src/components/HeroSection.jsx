@@ -11,21 +11,21 @@ export const HeroSection = () => {
   const [advisorEmail, setAdvisorEmail] = useState('');
   const [loading, setLoading] = useState({ membership: false, advisor: false });
 
-  const handleMembershipSignup = async (e) => {
+  const handleMembershipSignup = (e) => {
     e.preventDefault();
     if (!membershipEmail) return;
     
-    // Redirect to Calendly instead of mock signup
+    // Redirect to Calendly
     window.open("https://calendly.com/brandon-jetset101/", "_blank");
     setMembershipEmail('');
     toast.success("Redirecting to schedule your consultation!");
   };
 
-  const handleAdvisorSignup = async (e) => {
+  const handleAdvisorSignup = (e) => {
     e.preventDefault();
     if (!advisorEmail) return;
     
-    // Redirect to Calendly instead of mock signup  
+    // Redirect to Calendly
     window.open("https://calendly.com/brandon-jetset101/", "_blank");
     setAdvisorEmail('');
     toast.success("Redirecting to schedule your consultation!");
