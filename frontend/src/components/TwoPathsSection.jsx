@@ -47,19 +47,19 @@ export const TwoPathsSection = () => {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center">
                     <Star className="w-5 h-5 mr-2 text-yellow-500" />
-                    <span className="text-sm font-medium">IATA Rates</span>
+                    <span className="text-sm font-medium">IATA TA Rates</span>
                   </div>
                   <div className="flex items-center">
                     <Star className="w-5 h-5 mr-2 text-yellow-500" />
-                    <span className="text-sm font-medium">70% Savings</span>
+                    <span className="text-sm font-medium">FAM Hotel Rates</span>
                   </div>
                   <div className="flex items-center">
                     <Star className="w-5 h-5 mr-2 text-yellow-500" />
-                    <span className="text-sm font-medium">Worldwide</span>
+                    <span className="text-sm font-medium">AD90 Flight Rates</span>
                   </div>
                   <div className="flex items-center">
                     <Star className="w-5 h-5 mr-2 text-yellow-500" />
-                    <span className="text-sm font-medium">Elite Status</span>
+                    <span className="text-sm font-medium">IATA Cruise Rates</span>
                   </div>
                 </div>
 
