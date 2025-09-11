@@ -112,19 +112,19 @@ export const TwoPathsSection = () => {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center">
                     <Star className="w-5 h-5 mr-2 text-yellow-500" />
-                    <span className="text-sm font-medium">IATA Accredited</span>
+                    <span className="text-sm font-medium">IATA Accredited Agency</span>
                   </div>
                   <div className="flex items-center">
                     <Star className="w-5 h-5 mr-2 text-yellow-500" />
-                    <span className="text-sm font-medium">70/30 Split</span>
+                    <span className="text-sm font-medium">80/20 Split</span>
                   </div>
                   <div className="flex items-center">
                     <Star className="w-5 h-5 mr-2 text-yellow-500" />
-                    <span className="text-sm font-medium">Full Training</span>
+                    <span className="text-sm font-medium">Marriott Stars Program</span>
                   </div>
                   <div className="flex items-center">
                     <Star className="w-5 h-5 mr-2 text-yellow-500" />
-                    <span className="text-sm font-medium">Mentorship</span>
+                    <span className="text-sm font-medium">Community Support</span>
                   </div>
                 </div>
 
