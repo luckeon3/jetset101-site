@@ -118,6 +118,7 @@ export const MembershipBenefits = () => {
                 </p>
                 <Button 
                   className="w-full bg-[#003F5F] hover:bg-[#003F5F]/90 text-white font-semibold py-3 mb-4"
+                  onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
                 >
                   Start Annual Plan
                   <ArrowRight className="ml-2 w-4 h-4" />
