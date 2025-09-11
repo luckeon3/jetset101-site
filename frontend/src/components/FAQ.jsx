@@ -52,7 +52,7 @@ export const FAQ = () => {
               </button>
               <button 
                 className="bg-yellow-500 text-black font-semibold py-3 px-6 rounded-lg hover:bg-yellow-600 transition-colors"
-                onClick={() => document.querySelector('#newsletter').scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
               >
                 Get More Info
               </button>
