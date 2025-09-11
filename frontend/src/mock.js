@@ -158,7 +158,7 @@ export const mockData = {
       name: "Sarah Johnson",
       role: "Travel Advisor",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzU2NjU0NDc2fDA&ixlib=rb-4.1.0&q=85",
-      testimonial: "JetSet 101 transformed my passion for travel into a thriving business. The 70% commission split and incredible support system helped me earn over $4,000 in my first month!"
+      testimonial: "JetSet 101 transformed my passion for travel into a thriving business. The 80% commission split and incredible support system helped me earn over $4,000 in my first month!"
     },
     {
       name: "Michael Chen",
