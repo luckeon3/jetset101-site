@@ -84,94 +84,6 @@ export const AdvisorProgram = () => {
             </div>
           </div>
 
-          {/* Training Overview */}
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
-            <div>
-              <h3 className="text-3xl font-bold mb-6" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
-                Complete Training Program
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <div className="w-6 h-6 rounded-full bg-[#003F5F] flex items-center justify-center mr-4 mt-1">
-                    <span className="text-white text-sm font-bold">1</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                      Travel Industry Fundamentals
-                    </h4>
-                    <p className="text-gray-600 text-sm" style={{ fontFamily: 'Lato, sans-serif' }}>
-                      Master booking systems, supplier relationships, and industry standards
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-6 h-6 rounded-full bg-[#003F5F] flex items-center justify-center mr-4 mt-1">
-                    <span className="text-white text-sm font-bold">2</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                      Business Development
-                    </h4>
-                    <p className="text-gray-600 text-sm" style={{ fontFamily: 'Lato, sans-serif' }}>
-                      Learn client acquisition, marketing strategies, and business operations
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-6 h-6 rounded-full bg-[#003F5F] flex items-center justify-center mr-4 mt-1">
-                    <span className="text-white text-sm font-bold">3</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                      Ongoing Mentorship
-                    </h4>
-                    <p className="text-gray-600 text-sm" style={{ fontFamily: 'Lato, sans-serif' }}>
-                      Get continuous support and guidance from successful advisors
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-3xl font-bold mb-6" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
-                Tools & Support
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-yellow-500 mr-4"></div>
-                  <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
-                    Professional booking platforms
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-yellow-500 mr-4"></div>
-                  <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
-                    Marketing materials and templates
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-yellow-500 mr-4"></div>
-                  <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
-                    Lead generation systems
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-yellow-500 mr-4"></div>
-                  <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
-                    24/7 technical support
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-yellow-500 mr-4"></div>
-                  <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
-                    Exclusive supplier partnerships
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* CTA Section */}
           <div className="text-center bg-white rounded-2xl p-8 shadow-lg">
             <h3 className="text-2xl font-bold mb-4" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
@@ -183,6 +95,7 @@ export const AdvisorProgram = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 className="bg-[#003F5F] hover:bg-[#003F5F]/90 text-white font-semibold py-3 px-8"
+                onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
               >
                 Apply to Become an Advisor
                 <ArrowRight className="ml-2 w-4 h-4" />
