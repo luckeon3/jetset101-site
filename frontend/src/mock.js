@@ -141,7 +141,7 @@ export const mockData = {
     },
     {
       question: "How does the travel advisor program work?",
-      answer: "Our travel advisors earn a 70/30 commission split (70% to you) with complete training, marketing support, booking tools, and ongoing mentorship."
+      answer: "Our travel advisors earn a 80/20 commission split (80% to you) with complete training, marketing support, booking tools, and ongoing mentorship."
     },
     {
       question: "Is there a refund policy?",
