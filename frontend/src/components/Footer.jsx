@@ -173,6 +173,12 @@ export const Footer = () => {
                 © 2025 JetSet 101. All rights reserved.
               </div>
               <div className="flex items-center space-x-6">
+                <button 
+                  className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-2 px-4 rounded-lg mr-4 transition-colors"
+                  onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
+                >
+                  Access Benefits
+                </button>
                 <span className="text-sm text-gray-400" style={{ fontFamily: 'Lato, sans-serif' }}>
                   IATA Accredited • Secure Payments • 24/7 Support
                 </span>
