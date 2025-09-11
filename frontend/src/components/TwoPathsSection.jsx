@@ -79,7 +79,7 @@ export const TwoPathsSection = () => {
 
                 <Button
                   className="w-full bg-[#00BFA6] hover:bg-[#00BFA6]/90 text-white font-semibold py-3"
-                  onClick={() => scrollToSection('#membership')}
+                  onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
                 >
                   Learn More About Perks
                   <ArrowRight className="ml-2 w-4 h-4" />
