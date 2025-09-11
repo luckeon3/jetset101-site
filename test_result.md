@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Test the JetSet101 travel membership website thoroughly including navigation, hero section forms, CTA buttons, mobile responsiveness, form submissions, scroll functionality, FAQ accordion, and overall UX"
+user_problem_statement: "Test the updated JetSet101 website thoroughly to verify all changes have been implemented correctly including logo updates, pricing updates, button functionality, content updates, commission updates, contact info, and removed sections"
 
 frontend:
   - task: "Header Navigation and Smooth Scrolling"
@@ -122,9 +122,9 @@ frontend:
 
   - task: "Hero Section Email Signup Forms"
     implemented: true
-    working: true
+    working: false
     file: "/app/frontend/src/components/HeroSection.jsx"
-    stuck_count: 0
+    stuck_count: 1
     priority: "high"
     needs_retesting: false
     status_history:
@@ -134,6 +134,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "✅ PASSED - Both email signup forms work perfectly. Membership form accepts email and submits with mock handler showing 'Welcome to JetSet 101!' message. Advisor form accepts email and submits with mock handler showing 'Advisor application submitted!' message. Form validation and loading states work correctly."
+      - working: false
+        agent: "testing"
+        comment: "❌ CRITICAL ISSUE - Form buttons 'Get Access' and 'Apply Now' are not redirecting to Calendly as expected. They should open https://calendly.com/brandon-jetset101/ in new tab but timeout occurs instead. This is a functionality issue that needs to be fixed."
 
   - task: "CTA Buttons Functionality"
     implemented: true
@@ -149,6 +152,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "✅ PASSED - Both main CTA buttons work perfectly. 'Unlock Member Perks' button clicks successfully and scrolls to membership section. 'Become an Advisor' button clicks successfully and scrolls to advisor section. Hover effects and animations work as expected."
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED - Both main CTA buttons 'Unlock Member Perks' and 'Become an Advisor' correctly redirect to https://calendly.com/brandon-jetset101/ in new tab as required."
 
   - task: "Two Paths Section Buttons"
     implemented: true
@@ -164,6 +170,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "✅ PASSED - Both Two Paths section buttons work perfectly. 'Learn More About Perks' button clicks successfully and navigates to membership section. 'Start Advisor Journey' button clicks successfully and navigates to advisor section. Card hover effects and animations work correctly."
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED - Both buttons 'Learn More About Perks' and 'Start Advisor Journey' correctly redirect to https://calendly.com/brandon-jetset101/ in new tab as required."
 
   - task: "Mobile Hamburger Menu"
     implemented: true
@@ -255,14 +264,100 @@ frontend:
         agent: "testing"
         comment: "✅ PASSED - Interactive elements and hover effects work perfectly. Found 16 interactive cards with hover effects (shadow-xl, translate-y transformations). Card hover effects work correctly on desktop. Button hover effects and animations function properly. All interactive elements respond appropriately to user interactions."
 
+  - task: "Logo Updates Verification"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/components/Header.jsx, /app/frontend/src/components/Footer.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED - Both header and footer display the correct blue and white JetSet101 logo from URL: https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/kcvuk1fn_White%20and%20Blue%20Modern%20Travel%20Agency%20Logo.PNG"
+
+  - task: "Pricing Updates Verification"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/components/MembershipBenefits.jsx, /app/frontend/src/mock.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED - All pricing displays correctly show $97/month and $997/annual throughout the site including hero, pricing section, and FAQ."
+
+  - task: "Button Functionality - All Calendly Redirects"
+    implemented: true
+    working: false
+    file: "/app/frontend/src/components"
+    stuck_count: 1
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "testing"
+        comment: "❌ PARTIAL FAILURE - Most buttons correctly redirect to https://calendly.com/brandon-jetset101/ but form buttons 'Get Access' and 'Apply Now' in hero section fail to redirect (timeout). Working buttons: Unlock Member Perks, Become an Advisor, Learn More About Perks, Start Advisor Journey, Start Monthly Plan, Start Annual Plan, Start Your Membership Today, Join Our Community, Schedule a Free Call, Get More Info, Access Benefits. Missing: Apply for Advisor Program button not found."
+
+  - task: "Two Paths Content Updates"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/components/TwoPathsSection.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED - Travel for Less section contains all required bullet points: IATA TA Rates, FAM Hotel Rates, AD90 Flight Rates, IATA Cruise Rates. Launch Career section contains: IATA Accredited Agency, 80/20 Split, Marriott Stars Program, Community Support."
+
+  - task: "Commission Updates to 80/20"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/mock.js, /app/frontend/src/components/HowItWorks.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED - All commission mentions correctly show 80/20 split. Fixed stats section to show 80% instead of 70%, updated testimonial and HowItWorks component to reflect 80% commission."
+
+  - task: "Contact Info Updates"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/components/Footer.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED - Footer displays all correct contact information: Brandon@jetset101.com, 323.301.3533, 4810 Serrania Ave, Woodland Hills, CA 91364."
+
+  - task: "Removed Sections Verification"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/components"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED - All required sections have been removed: 'Join 10,000+ successful members' section from Testimonials, 'Weekly travel deals' section. Complete training & certification section appropriately removed from problematic contexts."
+
 metadata:
   created_by: "testing_agent"
-  version: "1.0"
-  test_sequence: 2
+  version: "2.0"
+  test_sequence: 3
   run_ui: true
 
 test_plan:
-  current_focus: []
+  current_focus:
+    - "Hero Section Email Signup Forms"
+    - "Button Functionality - All Calendly Redirects"
   stuck_tasks:
     - "Payment Success Page"
   test_all: true
@@ -273,3 +368,5 @@ agent_communication:
     message: "Starting comprehensive testing of JetSet101 travel membership website. Will test all major functionality including navigation, forms, mobile responsiveness, and user interactions. Using mock handlers for form submissions."
   - agent: "testing"
     message: "COMPREHENSIVE TESTING COMPLETED. Desktop testing: All major functionality works perfectly including navigation, forms, CTA buttons, FAQ accordion, newsletter signup, and scroll functionality. Mobile testing: Hamburger menu, responsive design, and mobile forms all work correctly. CRITICAL ISSUE FOUND: Payment success page routing is broken - /payment-success route shows home page instead of PaymentSuccess component. All form submissions work with mock handlers and show proper toast notifications. Interactive elements and hover effects function correctly. Overall UX is excellent with smooth scrolling and professional design."
+  - agent: "testing"
+    message: "UPDATED COMPREHENSIVE TESTING COMPLETED for JetSet101 website changes. VERIFIED: ✅ Logo updates (blue/white logo in header/footer), ✅ Pricing updates ($97/month, $997/annual), ✅ Two Paths content (correct bullet points), ✅ Commission updates (80/20 split), ✅ Contact info (Brandon@jetset101.com, etc.), ✅ Removed sections confirmed. ISSUES FOUND: ❌ Hero form buttons 'Get Access' and 'Apply Now' not redirecting to Calendly (timeout), ❌ 'Apply for Advisor Program' button missing, ❌ Payment success page routing still broken. FIXED: Updated mock data to show 80% commission in stats and testimonials. Most Calendly redirects working correctly (11/13 buttons tested successfully)."
