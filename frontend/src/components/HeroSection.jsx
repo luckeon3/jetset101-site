@@ -118,10 +118,9 @@ export const HeroSection = () => {
                   />
                   <Button
                     type="submit"
-                    disabled={loading.membership}
                     className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold whitespace-nowrap"
                   >
-                    {loading.membership ? 'Joining...' : 'Get Access'}
+                    Get Access
                   </Button>
                 </div>
               </form>
