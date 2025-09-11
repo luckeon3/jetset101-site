@@ -9,7 +9,6 @@ import { toast } from 'sonner';
 export const HeroSection = () => {
   const [membershipEmail, setMembershipEmail] = useState('');
   const [advisorEmail, setAdvisorEmail] = useState('');
-  const [loading, setLoading] = useState({ membership: false, advisor: false });
 
   const handleMembershipSignup = (e) => {
     e.preventDefault();
