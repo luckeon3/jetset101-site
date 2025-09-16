@@ -362,8 +362,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Hero Section Email Signup Forms"
-    - "Button Functionality - All Calendly Redirects"
+    - "Payment Success Page"
   stuck_tasks:
     - "Payment Success Page"
   test_all: true
