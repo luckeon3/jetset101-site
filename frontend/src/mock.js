@@ -178,7 +178,7 @@ export const mockData = {
   ],
 
   stats: [
-    { number: "10,000+", label: "Active Members" },
+    { number: "5,000+", label: "Active Members" },
     { number: "75%", label: "Max Flight Savings" },
     { number: "80%", label: "Advisor Commission" },
     { number: "$2M+", label: "Member Savings" }
