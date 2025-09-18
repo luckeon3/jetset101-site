@@ -140,7 +140,7 @@ export const mockData = {
     },
     {
       question: "What are the membership options?",
-      answer: "Option 1 (Monthly Plan): $499 one-time registration fee + $49/month for 12 months (Total Year 1: $1,087). Option 2 (All-In-One Plan): $997 one-time payment with no monthly fees and no reconnection fees."
+      answer: "Option 1 (Monthly Plan): $499 annual registration fee + $49/month for 12 months (Total Year 1: $1,087). Option 2 (All-In-One Plan): $997 one-time payment with no monthly fees and no reconnection fees."
     },
     {
       question: "How does the travel advisor program work?",
