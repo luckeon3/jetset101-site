@@ -83,18 +83,18 @@ export const MembershipBenefits = () => {
                 <div className="mb-4">
                   <div className="text-2xl font-bold text-[#00BFA6] mb-2">
                     ${mockData.pricing.monthly.registrationFee}
-                    <span className="text-lg text-gray-500"> annual registration</span>
+                    <span className="text-lg text-gray-500"> registration fee</span>
                   </div>
                   <div className="text-2xl font-bold text-[#00BFA6] mb-2">
                     + ${mockData.pricing.monthly.monthlyFee}
-                    <span className="text-lg text-gray-500">/month</span>
-                  </div>
-                  <div className="text-sm text-gray-600 mt-2">
-                    Total Year 1: ${mockData.pricing.monthly.totalYear1}
+                    <span className="text-lg text-gray-500">/month ongoing</span>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-6" style={{ fontFamily: 'Lato, sans-serif' }}>
+                <p className="text-gray-600 mb-4" style={{ fontFamily: 'Lato, sans-serif' }}>
                   {mockData.pricing.monthly.commitment}
+                </p>
+                <p className="text-sm text-red-600 mb-6" style={{ fontFamily: 'Lato, sans-serif' }}>
+                  {mockData.pricing.monthly.reconnectionPolicy}
                 </p>
                 <Button 
                   className="w-full bg-[#00BFA6] hover:bg-[#00BFA6]/90 text-white font-semibold py-3 mb-4"
