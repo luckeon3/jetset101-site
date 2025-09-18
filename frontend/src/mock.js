@@ -42,18 +42,6 @@ export const mockData = {
       earning: "Earn $1,000-5,000+ monthly"
     },
     {
-      icon: "GraduationCap",
-      title: "Complete Training Program", 
-      description: "Structured certification covering booking, marketing, and business ops",
-      earning: "Professional certification"
-    },
-    {
-      icon: "Headphones",
-      title: "Full Support System",
-      description: "Marketing tools, booking platforms, and dedicated mentor support",
-      earning: "Always supported"
-    },
-    {
       icon: "Globe",
       title: "Supplier Networks",
       description: "Access exclusive partnerships with VIP perks and enhanced commissions",
