@@ -365,9 +365,9 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Payment Success Page"
-  stuck_tasks:
-    - "Payment Success Page"
+    - "Git deployment fix verification"
+    - "Automated testing validation"
+  stuck_tasks: []
   test_all: true
   test_priority: "high_first"
 
