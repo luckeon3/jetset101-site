@@ -1,33 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from './ui/button';
-import { Card } from './ui/card';
-import { Input } from './ui/input';
-import { Plane, TrendingUp, ArrowRight } from 'lucide-react';
-import { mockData, mockHandlers } from '../mock';
-import { toast } from 'sonner';
+import { ArrowRight, ChevronDown } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu';
 
 export const HeroSection = () => {
-  const [membershipEmail, setMembershipEmail] = useState('');
-  const [advisorEmail, setAdvisorEmail] = useState('');
-
-  const handleMembershipSignup = (e) => {
-    e.preventDefault();
-    if (!membershipEmail) return;
-    
-    // Redirect to Calendly
-    window.open("https://calendly.com/brandon-jetset101/", "_blank");
-    setMembershipEmail('');
-    toast.success("Redirecting to schedule your consultation!");
-  };
-
-  const handleAdvisorSignup = (e) => {
-    e.preventDefault();
-    if (!advisorEmail) return;
-    
-    // Redirect to Calendly
-    window.open("https://calendly.com/brandon-jetset101/", "_blank");
-    setAdvisorEmail('');
-    toast.success("Redirecting to schedule your consultation!");
+  const scrollToPricing = () => {
+    const element = document.querySelector('#membership');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -35,7 +21,7 @@ export const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={mockData.hero.backgroundImage}
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHw4fHx0cm9waWNhbCUyMHBhcmFkaXNlfGVufDB8fHx8MTc1NjY1NDQzM3ww&ixlib=rb-4.1.0&q=85"
           alt="JetSet 101 Hero"
           className="w-full h-full object-cover"
         />
@@ -61,23 +47,50 @@ export const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button
-                size="lg"
-                className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-4 text-lg rounded-full transition-all duration-200 transform hover:scale-105"
-                onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
-              >
-                Unlock Member Perks
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-black font-bold px-8 py-4 text-lg rounded-full transition-all duration-200 transform hover:scale-105"
-                onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
-              >
-                Become an Advisor
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    size="lg"
+                    className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-4 text-lg rounded-full transition-all duration-200 transform hover:scale-105"
+                  >
+                    Unlock Member Perks
+                    <ChevronDown className="ml-2 w-5 h-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="center" className="w-56">
+                  <DropdownMenuItem onClick={scrollToPricing}>
+                    <ArrowRight className="mr-2 w-4 h-4" />
+                    View Pricing Options
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}>
+                    <ArrowRight className="mr-2 w-4 h-4" />
+                    Book Consultation
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-2 border-white text-white hover:bg-white hover:text-black font-bold px-8 py-4 text-lg rounded-full transition-all duration-200 transform hover:scale-105"
+                  >
+                    Become an Advisor
+                    <ChevronDown className="ml-2 w-5 h-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="center" className="w-56">
+                  <DropdownMenuItem onClick={scrollToPricing}>
+                    <ArrowRight className="mr-2 w-4 h-4" />
+                    View Pricing Options
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}>
+                    <ArrowRight className="mr-2 w-4 h-4" />
+                    Book Consultation
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
 
@@ -100,53 +113,20 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Quick Signup Forms */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {/* Membership Quick Signup */}
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
-              <form onSubmit={handleMembershipSignup} className="space-y-4">
-                <h3 className="text-white font-bold text-lg mb-2">Quick Access to Member Perks</h3>
-                <div className="flex gap-2">
-                  <Input
-                    type="email"
-                    placeholder="Your email address"
-                    value={membershipEmail}
-                    onChange={(e) => setMembershipEmail(e.target.value)}
-                    className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
-                    required
-                  />
-                  <Button
-                    type="submit"
-                    className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold whitespace-nowrap"
-                  >
-                    Get Access
-                  </Button>
-                </div>
-              </form>
-            </Card>
-
-            {/* Advisor Quick Signup */}
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
-              <form onSubmit={handleAdvisorSignup} className="space-y-4">
-                <h3 className="text-white font-bold text-lg mb-2">Start Your Advisor Journey</h3>
-                <div className="flex gap-2">
-                  <Input
-                    type="email"
-                    placeholder="Your email address"
-                    value={advisorEmail}
-                    onChange={(e) => setAdvisorEmail(e.target.value)}
-                    className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
-                    required
-                  />
-                  <Button
-                    type="submit"
-                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold whitespace-nowrap"
-                  >
-                    Apply Now
-                  </Button>
-                </div>
-              </form>
-            </Card>
+          {/* Quick Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
+            <Button
+              className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-full flex-1"
+              onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
+            >
+              Quick Access Member Perks
+            </Button>
+            <Button
+              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full flex-1"
+              onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
+            >
+              Start Your Advisor Journey
+            </Button>
           </div>
         </div>
       </div>
