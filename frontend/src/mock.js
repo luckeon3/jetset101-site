@@ -126,7 +126,7 @@ export const mockData = {
     name: "Brandon Torres",
     title: "Founder & CEO",
     story: "As a 40-year-old entrepreneur, family man, and passionate traveler, I've spent my life embracing new cultures and exploring breathtaking destinations. Travel has shaped me both personally and professionally, teaching me resilience, adaptability, and the power of human connection. But I recognized that the biggest obstacle to travel is money - too many people believe travel is a luxury they cannot afford. I refuse to accept this narrative. That's why I created JetSet 101: a travel community designed to break down barriers and make world-class travel more accessible through exclusive discounts, insider deals, and a supportive network of like-minded individuals. My mission is simple - empower people to see more, experience more, and earn more through travel.",
-    image: "https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/nqvt5ahc_IMG_2576.PNG"
+    image: "https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/ad415i28_FD79B15E-B9C6-4077-B9BD-74F7F2E9BA28.PNG"
   },
 
   faqs: [
