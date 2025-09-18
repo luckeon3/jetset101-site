@@ -103,8 +103,6 @@ export const MembershipBenefits = () => {
                   Choose Monthly Plan
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
-                <p className="text-sm text-gray-500">{mockData.pricing.monthly.savings}</p>
-                <p className="text-xs text-gray-400 mt-2">*${mockData.pricing.monthly.reconnectionFee} reconnection fee if cancelled</p>
               </CardContent>
             </Card>
 
