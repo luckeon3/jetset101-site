@@ -122,6 +122,20 @@ export const mockData = {
     }
   },
 
+  travelForLess: [
+    "IATA TA Rates",
+    "FAM Hotel Rates", 
+    "AD90 Flight Rates",
+    "IATA Cruise Rates"
+  ],
+
+  launchCareer: [
+    "IATA Accredited Agency",
+    "80/20 Split", 
+    "Marriott Stars Program",
+    "Community Support"
+  ],
+
   contact: {
     email: "Brandon@jetset101.com",
     phone: "323.301.3533",
