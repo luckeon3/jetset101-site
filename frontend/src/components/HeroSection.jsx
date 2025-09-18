@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from './ui/button';
+import { Card } from './ui/card';
+import { Input } from './ui/input';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import {
   DropdownMenu,
@@ -7,13 +9,37 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
+import { toast } from 'sonner';
 
 export const HeroSection = () => {
+  const [membershipEmail, setMembershipEmail] = useState('');
+  const [advisorEmail, setAdvisorEmail] = useState('');
+
   const scrollToPricing = () => {
     const element = document.querySelector('#membership');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleMembershipSignup = (e) => {
+    e.preventDefault();
+    if (!membershipEmail) return;
+    
+    // Redirect to Calendly
+    window.open("https://calendly.com/brandon-jetset101/", "_blank");
+    setMembershipEmail('');
+    toast.success("Redirecting to schedule your consultation!");
+  };
+
+  const handleAdvisorSignup = (e) => {
+    e.preventDefault();
+    if (!advisorEmail) return;
+    
+    // Redirect to Calendly
+    window.open("https://calendly.com/brandon-jetset101/", "_blank");
+    setAdvisorEmail('');
+    toast.success("Redirecting to schedule your consultation!");
   };
 
   return (
@@ -112,20 +138,74 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Quick Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
-            <Button
-              className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-full flex-1"
-              onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
-            >
-              Quick Access Member Perks
-            </Button>
-            <Button
-              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full flex-1"
-              onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
-            >
-              Start Your Advisor Journey
-            </Button>
+          {/* Symmetrical Layout - Email Forms + Quick Access Buttons */}
+          <div className="max-w-5xl mx-auto">
+            {/* Email Signup Forms Row */}
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              {/* Membership Email Signup */}
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
+                <form onSubmit={handleMembershipSignup} className="space-y-4">
+                  <h3 className="text-white font-bold text-lg mb-2 text-center">Quick Access to Member Perks</h3>
+                  <div className="flex gap-2">
+                    <Input
+                      type="email"
+                      placeholder="Your email address"
+                      value={membershipEmail}
+                      onChange={(e) => setMembershipEmail(e.target.value)}
+                      className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
+                      required
+                    />
+                    <Button
+                      type="submit"
+                      className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold whitespace-nowrap"
+                    >
+                      Get Access
+                    </Button>
+                  </div>
+                </form>
+              </Card>
+
+              {/* Advisor Email Signup */}
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
+                <form onSubmit={handleAdvisorSignup} className="space-y-4">
+                  <h3 className="text-white font-bold text-lg mb-2 text-center">Start Your Advisor Journey</h3>
+                  <div className="flex gap-2">
+                    <Input
+                      type="email"
+                      placeholder="Your email address"
+                      value={advisorEmail}
+                      onChange={(e) => setAdvisorEmail(e.target.value)}
+                      className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
+                      required
+                    />
+                    <Button
+                      type="submit"
+                      className="bg-blue-500 hover:bg-blue-600 text-white font-bold whitespace-nowrap"
+                    >
+                      Apply Now
+                    </Button>
+                  </div>
+                </form>
+              </Card>
+            </div>
+
+            {/* Quick Action Buttons Row */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <Button
+                className="bg-yellow-500/90 hover:bg-yellow-500 text-black font-bold py-4 px-6 rounded-lg text-lg"
+                onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
+              >
+                Quick Access Member Perks
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button
+                className="bg-blue-500/90 hover:bg-blue-500 text-white font-bold py-4 px-6 rounded-lg text-lg"
+                onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
+              >
+                Start Your Advisor Journey
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
