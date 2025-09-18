@@ -106,16 +106,19 @@ export const mockData = {
 
   pricing: {
     monthly: {
-      price: 97,
-      period: "month",
-      commitment: "6-month initial commitment",
-      savings: "Start earning immediately"
+      registrationFee: 499,
+      monthlyFee: 49,
+      reconnectionFee: 499,
+      totalYear1: 1087,
+      period: "Monthly Plan",
+      commitment: "One-time registration fee + $49/month for 12 months",
+      savings: "Flexible payment option"
     },
-    annual: {
+    allinone: {
       price: 997,
-      period: "year", 
-      commitment: "Best Value - Save $176",
-      savings: "Lock in professional pricing"
+      period: "All-In-One Plan", 
+      commitment: "One-time payment - No monthly fees",
+      savings: "Save $90 vs Monthly Plan - No reconnection fees"
     }
   },
 
