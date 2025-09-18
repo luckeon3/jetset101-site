@@ -160,13 +160,13 @@ export const mockData = {
     {
       name: "Christina Perez",
       role: "Travel Advisor",
-      image: "https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/k00dkuft_67C16B1B-2837-4402-9A10-6C76D995C70C.jpeg",
+      image: "https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/o04c5lmu_IMG_6797.jpg",
       testimonial: "JetSet 101 transformed my passion for travel into a thriving business. The 80% commission split and incredible support system helped me earn over $4,000 in my first month!"
     },
     {
       name: "Diana Hernandez",
       role: "JetSet Member",
-      image: "https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/o04c5lmu_IMG_6797.jpg",
+      image: "https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/k00dkuft_67C16B1B-2837-4402-9A10-6C76D995C70C.jpeg",
       testimonial: "I saved $1,800 on our family vacation to Europe! The exclusive deals and community support made planning our dream trip so much easier."
     },
     {
