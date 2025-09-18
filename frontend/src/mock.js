@@ -158,21 +158,21 @@ export const mockData = {
 
   testimonials: [
     {
-      name: "Sarah Johnson",
+      name: "Christina Perez",
       role: "Travel Advisor",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzU2NjU0NDc2fDA&ixlib=rb-4.1.0&q=85",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b332c477?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHByb2Zlc3Npb25hbHxlbnwwfHx8fDE3MjY1MjA4MzZ8MA&ixlib=rb-4.0.3&q=85",
       testimonial: "JetSet 101 transformed my passion for travel into a thriving business. The 80% commission split and incredible support system helped me earn over $4,000 in my first month!"
     },
     {
-      name: "Michael Chen",
+      name: "Diana Hernandez",
       role: "JetSet Member",
-      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzU2NjU0NDc2fDA&ixlib=rb-4.1.0&q=85",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwyNnx8d29tYW4lMjBwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzI2NTIwODM2fDA&ixlib=rb-4.0.3&q=85",
       testimonial: "I saved $1,800 on our family vacation to Europe! The exclusive deals and community support made planning our dream trip so much easier."
     },
     {
-      name: "Lisa Rodriguez",
+      name: "Donovan Brown",
       role: "Travel Advisor",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzU2NjU0NDc2fDA&ixlib=rb-4.1.0&q=85",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxtYW4lMjBwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzI2NTIwODM2fDA&ixlib=rb-4.0.3&q=85",
       testimonial: "The training program gave me everything I needed to succeed. Now I help others travel better while building my own profitable business from anywhere."
     }
   ],
