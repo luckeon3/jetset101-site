@@ -83,7 +83,7 @@ export const MembershipBenefits = () => {
                 <div className="mb-4">
                   <div className="text-2xl font-bold text-[#00BFA6] mb-2">
                     ${mockData.pricing.monthly.registrationFee}
-                    <span className="text-lg text-gray-500"> registration</span>
+                    <span className="text-lg text-gray-500"> annual registration</span>
                   </div>
                   <div className="text-2xl font-bold text-[#00BFA6] mb-2">
                     + ${mockData.pricing.monthly.monthlyFee}
