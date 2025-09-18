@@ -78,11 +78,20 @@ export const MembershipBenefits = () => {
             <Card className="bg-white border-2 border-gray-200 shadow-lg">
               <CardContent className="p-8 text-center">
                 <h3 className="text-2xl font-bold mb-4" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
-                  Monthly Membership
+                  {mockData.pricing.monthly.period}
                 </h3>
-                <div className="text-4xl font-bold text-[#00BFA6] mb-2">
-                  ${mockData.pricing.monthly.price}
-                  <span className="text-lg text-gray-500">/{mockData.pricing.monthly.period}</span>
+                <div className="mb-4">
+                  <div className="text-2xl font-bold text-[#00BFA6] mb-2">
+                    ${mockData.pricing.monthly.registrationFee}
+                    <span className="text-lg text-gray-500"> registration</span>
+                  </div>
+                  <div className="text-2xl font-bold text-[#00BFA6] mb-2">
+                    + ${mockData.pricing.monthly.monthlyFee}
+                    <span className="text-lg text-gray-500">/month</span>
+                  </div>
+                  <div className="text-sm text-gray-600 mt-2">
+                    Total Year 1: ${mockData.pricing.monthly.totalYear1}
+                  </div>
                 </div>
                 <p className="text-gray-600 mb-6" style={{ fontFamily: 'Lato, sans-serif' }}>
                   {mockData.pricing.monthly.commitment}
@@ -91,14 +100,15 @@ export const MembershipBenefits = () => {
                   className="w-full bg-[#00BFA6] hover:bg-[#00BFA6]/90 text-white font-semibold py-3 mb-4"
                   onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
                 >
-                  Start Monthly Plan
+                  Choose Monthly Plan
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
                 <p className="text-sm text-gray-500">{mockData.pricing.monthly.savings}</p>
+                <p className="text-xs text-gray-400 mt-2">*${mockData.pricing.monthly.reconnectionFee} reconnection fee if cancelled</p>
               </CardContent>
             </Card>
 
-            {/* Annual Plan */}
+            {/* All-In-One Plan */}
             <Card className="bg-gradient-to-b from-yellow-50 to-yellow-100 border-2 border-yellow-300 shadow-lg relative">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <span className="bg-yellow-500 text-black font-bold px-4 py-1 rounded-full text-sm">
@@ -107,23 +117,24 @@ export const MembershipBenefits = () => {
               </div>
               <CardContent className="p-8 text-center">
                 <h3 className="text-2xl font-bold mb-4" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
-                  Annual Membership
+                  {mockData.pricing.allinone.period}
                 </h3>
                 <div className="text-4xl font-bold text-[#003F5F] mb-2">
-                  ${mockData.pricing.annual.price}
-                  <span className="text-lg text-gray-500">/{mockData.pricing.annual.period}</span>
+                  ${mockData.pricing.allinone.price}
+                  <span className="text-lg text-gray-500"> one-time</span>
                 </div>
                 <p className="text-gray-600 mb-6" style={{ fontFamily: 'Lato, sans-serif' }}>
-                  {mockData.pricing.annual.commitment}
+                  {mockData.pricing.allinone.commitment}
                 </p>
                 <Button 
                   className="w-full bg-[#003F5F] hover:bg-[#003F5F]/90 text-white font-semibold py-3 mb-4"
                   onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
                 >
-                  Start Annual Plan
+                  Choose All-In-One Plan
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
-                <p className="text-sm text-gray-500">{mockData.pricing.annual.savings}</p>
+                <p className="text-sm text-gray-500">{mockData.pricing.allinone.savings}</p>
+                <p className="text-xs text-gray-400 mt-2">*No reconnection fees ever</p>
               </CardContent>
             </Card>
           </div>
