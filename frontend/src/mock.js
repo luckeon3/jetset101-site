@@ -140,7 +140,7 @@ export const mockData = {
     },
     {
       question: "What are the membership options?",
-      answer: "Monthly Membership: $97/month (requires 6-month initial commitment). Annual Membership: $997/year (Best Value - Save $176 vs monthly)."
+      answer: "Option 1 (Monthly Plan): $499 one-time registration fee + $49/month for 12 months (Total Year 1: $1,087). Option 2 (All-In-One Plan): $997 one-time payment with no monthly fees and no reconnection fees."
     },
     {
       question: "How does the travel advisor program work?",
