@@ -160,19 +160,19 @@ export const mockData = {
     {
       name: "Christina Perez",
       role: "Travel Advisor",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b332c477?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHByb2Zlc3Npb25hbHxlbnwwfHx8fDE3MjY1MjA4MzZ8MA&ixlib=rb-4.0.3&q=85",
+      image: "https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/k00dkuft_67C16B1B-2837-4402-9A10-6C76D995C70C.jpeg",
       testimonial: "JetSet 101 transformed my passion for travel into a thriving business. The 80% commission split and incredible support system helped me earn over $4,000 in my first month!"
     },
     {
       name: "Diana Hernandez",
       role: "JetSet Member",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwyNnx8d29tYW4lMjBwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzI2NTIwODM2fDA&ixlib=rb-4.0.3&q=85",
+      image: "https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/o04c5lmu_IMG_6797.jpg",
       testimonial: "I saved $1,800 on our family vacation to Europe! The exclusive deals and community support made planning our dream trip so much easier."
     },
     {
       name: "Donovan Brown",
       role: "Travel Advisor",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxtYW4lMjBwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzI2NTIwODM2fDA&ixlib=rb-4.0.3&q=85",
+      image: "https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/jyircl41_donnyshoot-2206.JPEG",
       testimonial: "The training program gave me everything I needed to succeed. Now I help others travel better while building my own profitable business from anywhere."
     }
   ],
