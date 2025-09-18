@@ -105,11 +105,10 @@ export const HeroSection = () => {
               <span className="text-sm font-medium">IATA Certified</span>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-yellow-400">10,000+</div>
-              <div className="text-sm">Members</div>
+              <div className="text-lg font-bold text-white">No Minimums</div>
             </div>
             <div className="text-center">
-              <div className="text-lg font-bold text-white">No Minimums</div>
+              <div className="text-lg font-bold text-yellow-400">80% Commission</div>
             </div>
           </div>
 
