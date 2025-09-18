@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JetSet 101 - Travel Smarter. Earn More. Live Better.</title>
+    <meta name="description" content="JetSet 101 - Professional travel access with exclusive industry discounts and advisor opportunities">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAKYSURBVFhH7ZZNaBNBFMefJBsloqJYW1sQwYNePHjx4MGjCAqCB0Hx4MGDB0/Ci1c9ePDgwYsHL168ePHixYsXL168ePHixYsXL168ePHixYsX">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Lato', sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            overflow-x: hidden;
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        /* Header Styles */
+        .header { 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            background: rgba(255,255,255,0.95); 
+            backdrop-filter: blur(10px); 
+            z-index: 1000; 
+            padding: 1rem 0; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        
+        .logo img { 
+            height: 40px; 
+            width: auto;
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 2rem; 
+            list-style: none;
+        }
+        
+        .nav-links a { 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: 500; 
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a:hover { 
+            color: #fbbf24; 
+        }
+        
+        .btn { 
+            background: #fbbf24; 
+            color: #000; 
+            padding: 0.75rem 1.5rem; 
+            border: none; 
+            border-radius: 25px; 
+            font-weight: 600; 
+            text-decoration: none; 
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .btn:hover { 
+            background: #f59e0b; 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero { 
+            min-height: 100vh; 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?crop=entropy&cs=srgb&fm=jpg&q=85&w=1920') center/cover; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: white; 
+            position: relative;
+        }
+        
+        .hero-content { 
+            max-width: 1000px; 
+            padding: 2rem;
+        }
+        
+        .hero-content h1 { 
+            font-family: 'Poppins', sans-serif; 
+            font-size: clamp(2.5rem, 6vw, 4.5rem); 
+            font-weight: 700; 
+            margin-bottom: 1.5rem; 
+            line-height: 1.1;
+        }
+        
+        .highlight { 
+            color: #fbbf24; 
+        }
+        
+        .hero-content p { 
+            font-size: 1.25rem; 
+            margin-bottom: 3rem; 
+            max-width: 800px; 
+            margin-left: auto; 
+            margin-right: auto;
+            opacity: 0.95;
+        }
+        
+        .hero-buttons { 
+            display: flex; 
+            gap: 1.5rem; 
+            justify-content: center; 
+            margin-bottom: 4rem; 
+            flex-wrap: wrap; 
+        }
+        
+        .btn-primary { 
+            background: #fbbf24; 
+            color: #000; 
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+        
+        .btn-secondary { 
+            background: transparent; 
+            color: white; 
+            border: 2px solid white; 
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+        
+        .btn-secondary:hover { 
+            background: white; 
+            color: #000; 
+        }
+        
+        /* Trust Indicators */
+        .trust-indicators { 
+            display: flex; 
+            gap: 3rem; 
+            justify-content: center; 
+            margin-bottom: 3rem; 
+            flex-wrap: wrap; 
+        }
+        
+        .trust-item { 
+            display: flex; 
+            align-items: center; 
+            gap: 0.5rem; 
+            font-weight: 500;
+            background: rgba(255,255,255,0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Email Forms */
+        .email-forms { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 2rem; 
+            max-width: 900px; 
+            margin: 0 auto 3rem; 
+        }
+        
+        .email-form { 
+            background: rgba(255,255,255,0.15); 
+            backdrop-filter: blur(15px); 
+            border-radius: 15px; 
+            padding: 2rem; 
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .email-form h3 { 
+            margin-bottom: 1.5rem; 
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+        }
+        
+        .form-row { 
+            display: flex; 
+            gap: 1rem; 
+        }
+        
+        .form-row input { 
+            flex: 1; 
+            padding: 1rem; 
+            border: 1px solid rgba(255,255,255,0.3); 
+            background: rgba(255,255,255,0.2); 
+            color: white; 
+            border-radius: 8px; 
+            font-size: 1rem;
+        }
+        
+        .form-row input::placeholder { 
+            color: rgba(255,255,255,0.7); 
+        }
+        
+        .form-row input:focus {
+            outline: none;
+            border-color: #fbbf24;
+            background: rgba(255,255,255,0.25);
+        }
+        
+        /* Quick Access Buttons */
+        .quick-buttons { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2rem; 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+        
+        .quick-btn {
+            padding: 1.25rem 2rem; 
+            font-size: 1.1rem;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .quick-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        /* Sections */
+        .section { 
+            padding: 5rem 0; 
+        }
+        
+        .section-light { 
+            background: #f8fafc; 
+        }
+        
+        .section-title { 
+            font-family: 'Poppins', sans-serif; 
+            text-align: center; 
+            font-size: 2.5rem; 
+            margin-bottom: 3rem; 
+            color: #1a1a1a;
+        }
+        
+        /* Pricing Cards */
+        .pricing-cards { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 2rem; 
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card { 
+            background: white; 
+            border-radius: 15px; 
+            padding: 2.5rem; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            text-align: center; 
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pricing-card.featured { 
+            background: linear-gradient(135deg, #fef3c7, #fde68a); 
+            border: 3px solid #fbbf24; 
+            transform: scale(1.05);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fbbf24;
+            color: black;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .pricing-card h3 { 
+            font-size: 1.75rem; 
+            margin-bottom: 1.5rem; 
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .price { 
+            font-size: 3rem; 
+            font-weight: 700; 
+            color: #059669; 
+            margin-bottom: 0.5rem; 
+        }
+        
+        .price-small { 
+            font-size: 1.25rem; 
+            color: #6b7280; 
+        }
+        
+        .price-note { 
+            font-size: 1rem; 
+            color: #6b7280; 
+            margin-bottom: 2rem; 
+            line-height: 1.5;
+        }
+        
+        .pricing-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Testimonials */
+        .testimonial-cards { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 2rem; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card { 
+            background: white; 
+            border-radius: 15px; 
+            padding: 2.5rem; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-style: italic;
+            color: #374151;
+        }
+        
+        .testimonial-author { 
+            display: flex; 
+            align-items: center; 
+            gap: 1rem; 
+        }
+        
+        .testimonial-author img { 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 3px solid #fbbf24;
+        }
+        
+        .author-info strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-bottom: 0.25rem;
+        }
+        
+        .author-role {
+            color: #6b7280; 
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        .footer { 
+            background: #1f2937; 
+            color: white; 
+            padding: 3rem 0 2rem; 
+            text-align: center; 
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer h3 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info {
+            margin: 2rem 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .footer-btn {
+            margin: 2rem 0 1rem;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links { 
+                display: none; 
+            }
+            
+            .hero-buttons { 
+                flex-direction: column; 
+                align-items: center; 
+            }
+            
+            .form-row { 
+                flex-direction: column; 
+            }
+            
+            .trust-indicators {
+                gap: 1rem;
+            }
+            
+            .trust-item {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero-content {
+                padding: 1rem;
+            }
+            
+            .email-forms {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <img src="https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/kcvuk1fn_White%20and%20Blue%20Modern%20Travel%20Agency%20Logo.PNG" alt="JetSet 101" loading="lazy">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#membership">Membership</a></li>
+                <li><a href="#advisor">Become Advisor</a></li>
+                <li><a href="#testimonials">Success Stories</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="https://calendly.com/brandon-jetset101/" class="btn" target="_blank" rel="noopener">Get Started</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>Travel Smarter. <span class="highlight">Earn More.</span><br>Live Better.</h1>
+            <p>JetSet 101 gives you insider access to luxury travel perks & the tools to turn travel into a career with 80% commission splits.</p>
+            
+            <!-- CTA Buttons -->
+            <div class="hero-buttons">
+                <a href="https://calendly.com/brandon-jetset101/" class="btn btn-primary" target="_blank" rel="noopener">Unlock Member Perks</a>
+                <a href="https://calendly.com/brandon-jetset101/" class="btn btn-secondary" target="_blank" rel="noopener">Become an Advisor</a>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <span>🏆 IATA Certified</span>
+                </div>
+                <div class="trust-item">
+                    <span>📈 No Minimums</span>
+                </div>
+                <div class="trust-item">
+                    <span>💰 80% Commission</span>
+                </div>
+            </div>
+            
+            <!-- Email Forms -->
+            <div class="email-forms">
+                <div class="email-form">
+                    <h3>Quick Access to Member Perks</h3>
+                    <form class="form-row" onsubmit="handleFormSubmit(event, 'member')">
+                        <input type="email" placeholder="Your email address" required>
+                        <a href="https://calendly.com/brandon-jetset101/" class="btn btn-primary" target="_blank" rel="noopener">Get Access</a>
+                    </form>
+                </div>
+                <div class="email-form">
+                    <h3>Start Your Advisor Journey</h3>
+                    <form class="form-row" onsubmit="handleFormSubmit(event, 'advisor')">
+                        <input type="email" placeholder="Your email address" required>
+                        <a href="https://calendly.com/brandon-jetset101/" class="btn" style="background: #3b82f6; color: white;" target="_blank" rel="noopener">Apply Now</a>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Quick Access Buttons -->
+            <div class="quick-buttons">
+                <a href="https://calendly.com/brandon-jetset101/" class="btn btn-primary quick-btn" target="_blank" rel="noopener">Quick Access Member Perks →</a>
+                <a href="https://calendly.com/brandon-jetset101/" class="btn quick-btn" style="background: #3b82f6; color: white;" target="_blank" rel="noopener">Start Your Advisor Journey →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section section-light" id="membership">
+        <div class="container">
+            <h2 class="section-title">Choose Your <span class="highlight">JetSet 101</span> Plan</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Monthly Plan</h3>
+                    <div class="price">$499<span class="price-small"> annual registration</span></div>
+                    <div class="price" style="font-size: 2rem; margin-top: 1rem;">+ $49<span class="price-small">/month</span></div>
+                    <div class="price-note">
+                        <strong>Total Year 1: $1,087</strong><br>
+                        Annual registration fee + monthly payments<br>
+                        Flexible payment option
+                    </div>
+                    <a href="https://calendly.com/brandon-jetset101/" class="btn pricing-btn" style="background: #059669; color: white;" target="_blank" rel="noopener">Choose Monthly Plan</a>
+                    <p style="font-size: 0.85rem; color: #6b7280;">*$499 reconnection fee if cancelled</p>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="featured-badge">BEST VALUE</div>
+                    <h3>All-In-One Plan</h3>
+                    <div class="price">$997<span class="price-small"> one-time</span></div>
+                    <div class="price-note">
+                        <strong>One-time payment - No monthly fees</strong><br>
+                        Save $90 vs Monthly Plan<br>
+                        No reconnection fees ever
+                    </div>
+                    <a href="https://calendly.com/brandon-jetset101/" class="btn pricing-btn" style="background: #1f2937; color: white;" target="_blank" rel="noopener">Choose All-In-One Plan</a>
+                    <p style="font-size: 0.85rem; color: #059669; font-weight: 600;">✓ No additional fees</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Real <span class="highlight">Success Stories</span></h2>
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">"JetSet 101 transformed my passion for travel into a thriving business. The 80% commission split and incredible support system helped me earn over $4,000 in my first month!"</div>
+                    <div class="testimonial-author">
+                        <img src="https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/o04c5lmu_IMG_6797.jpg" alt="Christina Perez" loading="lazy">
+                        <div class="author-info">
+                            <strong>Christina Perez</strong>
+                            <div class="author-role">Travel Advisor</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">"I saved $1,800 on our family vacation to Europe! The exclusive deals and community support made planning our dream trip so much easier."</div>
+                    <div class="testimonial-author">
+                        <img src="https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/k00dkuft_67C16B1B-2837-4402-9A10-6C76D995C70C.jpeg" alt="Diana Hernandez" loading="lazy">
+                        <div class="author-info">
+                            <strong>Diana Hernandez</strong>
+                            <div class="author-role">JetSet Member</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">"The training program gave me everything I needed to succeed. Now I help others travel better while building my own profitable business from anywhere."</div>
+                    <div class="testimonial-author">
+                        <img src="https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/jyircl41_donnyshoot-2206.JPEG" alt="Donovan Brown" loading="lazy">
+                        <div class="author-info">
+                            <strong>Donovan Brown</strong>
+                            <div class="author-role">Travel Advisor</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="section section-light" id="founder">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; align-items: center; max-width: 1000px; margin: 0 auto;">
+                <div>
+                    <img src="https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/ad415i28_FD79B15E-B9C6-4077-B9BD-74F7F2E9BA28.PNG" alt="Brandon Torres - Founder & CEO" style="width: 100%; height: 400px; object-fit: cover; border-radius: 15px;" loading="lazy">
+                </div>
+                <div>
+                    <h2 style="font-family: 'Poppins', sans-serif; font-size: 2.5rem; margin-bottom: 1rem;">Meet Our <span class="highlight">Founder</span></h2>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #1a1a1a;">Brandon Torres</h3>
+                    <p style="color: #6b7280; margin-bottom: 2rem; font-size: 1.1rem;">Founder & CEO</p>
+                    <p style="line-height: 1.7; color: #374151; margin-bottom: 2rem;">As a 40-year-old entrepreneur, family man, and passionate traveler, I've spent my life embracing new cultures and exploring breathtaking destinations. Travel has shaped me both personally and professionally, teaching me resilience, adaptability, and the power of human connection. But I recognized that the biggest obstacle to travel is money - too many people believe travel is a luxury they cannot afford. I refuse to accept this narrative.</p>
+                    <p style="line-height: 1.7; color: #374151; margin-bottom: 2rem;">That's why I created JetSet 101: a travel community designed to break down barriers and make world-class travel more accessible through exclusive discounts, insider deals, and a supportive network of like-minded individuals. My mission is simple - empower people to see more, experience more, and earn more through travel.</p>
+                    <a href="https://calendly.com/brandon-jetset101/" class="btn" style="background: #1f2937; color: white; font-size: 1.1rem;" target="_blank" rel="noopener">Join Our Community →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <img src="https://customer-assets.emergentagent.com/job_flight-buddy-2/artifacts/kcvuk1fn_White%20and%20Blue%20Modern%20Travel%20Agency%20Logo.PNG" alt="JetSet 101" style="height: 50px; margin-bottom: 2rem;" loading="lazy">
+                
+                <h3>Ready to Transform Your Travel Experience?</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Join thousands of smart travelers and successful advisors worldwide.</p>
+                
+                <div class="footer-btn">
+                    <a href="https://calendly.com/brandon-jetset101/" class="btn" style="font-size: 1.1rem; padding: 1rem 2rem;" target="_blank" rel="noopener">Access Benefits</a>
+                </div>
+                
+                <div class="contact-info">
+                    <p><strong>Contact Brandon Torres:</strong></p>
+                    <p>📧 Brandon@jetset101.com</p>
+                    <p>📞 323.301.3533</p>
+                    <p>📍 4810 Serrania Ave, Woodland Hills, CA 91364</p>
+                </div>
+                
+                <div style="border-top: 1px solid #374151; margin-top: 2rem; padding-top: 2rem;">
+                    <p>&copy; 2025 JetSet 101. All rights reserved.</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.7;">IATA Accredited • Secure Payments • 24/7 Support</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Handle form submissions (optional email capture before redirect)
+        function handleFormSubmit(event, type) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            if (email) {
+                // Optional: Send email to your backend here
+                console.log(`${type} signup:`, email);
+                // Redirect to Calendly
+                window.open('https://calendly.com/brandon-jetset101/', '_blank');
+            }
+        }
+
+        // Performance optimization: Lazy load images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
+</html>
