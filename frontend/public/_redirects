@@ -1,0 +1,7 @@
+/*    /index.html   200
+
+# API redirects (if you add backend later)
+/api/*  https://your-backend-url.com/api/:splat  200
+
+# Prevent direct access to build files
+/build/*  /  404
