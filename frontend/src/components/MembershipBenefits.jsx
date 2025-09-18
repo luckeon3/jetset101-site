@@ -124,6 +124,9 @@ export const MembershipBenefits = () => {
                 <p className="text-gray-600 mb-6" style={{ fontFamily: 'Lato, sans-serif' }}>
                   {mockData.pricing.allinone.commitment}
                 </p>
+                <p className="text-sm text-green-600 mb-6" style={{ fontFamily: 'Lato, sans-serif' }}>
+                  {mockData.pricing.allinone.reconnectionPolicy}
+                </p>
                 <Button 
                   className="w-full bg-[#003F5F] hover:bg-[#003F5F]/90 text-white font-semibold py-3 mb-4"
                   onClick={() => window.open("https://calendly.com/brandon-jetset101/", "_blank")}
