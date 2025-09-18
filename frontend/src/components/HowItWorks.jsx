@@ -130,63 +130,63 @@ export const HowItWorks = () => {
             </h3>
             
             <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-8">
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div className="text-center">
-                  <h4 className="text-xl font-bold mb-4 text-[#00BFA6]" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  <h4 className="text-xl font-bold mb-6 text-[#00BFA6]" style={{ fontFamily: 'Poppins, sans-serif' }}>
                     Travel Membership
                   </h4>
-                  <ul className="space-y-3 text-left">
-                    <li className="flex items-center">
+                  <ul className="space-y-3 text-center max-w-sm mx-auto">
+                    <li className="flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-[#00BFA6] mr-3"></div>
                       <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
                         Instant access to exclusive travel deals
                       </span>
                     </li>
-                    <li className="flex items-center">
+                    <li className="flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-[#00BFA6] mr-3"></div>
                       <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
                         Save up to 75% on flights and hotels
                       </span>
                     </li>
-                    <li className="flex items-center">
+                    <li className="flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-[#00BFA6] mr-3"></div>
                       <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
                         Join exclusive travel community
                       </span>
                     </li>
-                    <li className="flex items-center">
+                    <li className="flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-[#00BFA6] mr-3"></div>
                       <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
-                        Monthly or annual options available
+                        Monthly or one-time payment options
                       </span>
                     </li>
                   </ul>
                 </div>
                 
                 <div className="text-center">
-                  <h4 className="text-xl font-bold mb-4 text-[#003F5F]" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                  <h4 className="text-xl font-bold mb-6 text-[#003F5F]" style={{ fontFamily: 'Poppins, sans-serif' }}>
                     Advisor Career
                   </h4>
-                  <ul className="space-y-3 text-left">
-                    <li className="flex items-center">
+                  <ul className="space-y-3 text-center max-w-sm mx-auto">
+                    <li className="flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-[#003F5F] mr-3"></div>
                       <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
                         Earn 80% commission on all bookings
                       </span>
                     </li>
-                    <li className="flex items-center">
+                    <li className="flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-[#003F5F] mr-3"></div>
                       <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
                         Complete training and certification
                       </span>
                     </li>
-                    <li className="flex items-center">
+                    <li className="flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-[#003F5F] mr-3"></div>
                       <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
                         Marketing tools and support system
                       </span>
                     </li>
-                    <li className="flex items-center">
+                    <li className="flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-[#003F5F] mr-3"></div>
                       <span className="text-gray-700" style={{ fontFamily: 'Lato, sans-serif' }}>
                         Build your own travel business
