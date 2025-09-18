@@ -109,16 +109,15 @@ export const mockData = {
       registrationFee: 499,
       monthlyFee: 49,
       reconnectionFee: 499,
-      totalYear1: 1087,
       period: "Monthly Plan",
-      commitment: "Annual registration fee $499 + $49/month for 12 months",
-      savings: "Flexible payment option"
+      commitment: "$499 registration fee + $49/month ongoing",
+      reconnectionPolicy: "Includes $499 reconnection fee if membership lapses"
     },
     allinone: {
       price: 997,
       period: "All-In-One Plan", 
-      commitment: "One-time payment - No monthly fees",
-      savings: "Save $90 vs Monthly Plan - No reconnection fees"
+      commitment: "$997 one-time annual payment",
+      reconnectionPolicy: "No reconnection fee required"
     }
   },
 
