@@ -122,6 +122,12 @@ export const mockData = {
     }
   },
 
+  contact: {
+    email: "Brandon@jetset101.com",
+    phone: "323.301.3533",
+    address: "4810 Serrania Ave Woodland Hills CA 91364"
+  },
+
   founderStory: {
     name: "Brandon Torres",
     title: "Founder & CEO",
