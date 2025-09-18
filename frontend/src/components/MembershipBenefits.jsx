@@ -134,8 +134,6 @@ export const MembershipBenefits = () => {
                   Choose All-In-One Plan
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
-                <p className="text-sm text-gray-500">{mockData.pricing.allinone.savings}</p>
-                <p className="text-xs text-gray-400 mt-2">*No reconnection fees ever</p>
               </CardContent>
             </Card>
           </div>
