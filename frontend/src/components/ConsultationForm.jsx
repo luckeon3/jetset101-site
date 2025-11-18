@@ -104,12 +104,14 @@ export const ConsultationForm = () => {
                     type="text"
                     id="consultation-name"
                     name="name"
-                    className="input-field h-12 text-base"
+                    className={`input-field h-12 text-base ${errors.name ? 'border-red-500 focus:border-red-500' : ''}`}
                     placeholder="Enter your full name"
                     value={formData.name}
                     onChange={handleChange}
-                    required
                   />
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                  )}
                 </div>
 
                 {/* Email Field */}
@@ -121,12 +123,14 @@ export const ConsultationForm = () => {
                     type="email"
                     id="consultation-email"
                     name="email"
-                    className="input-field h-12 text-base"
+                    className={`input-field h-12 text-base ${errors.email ? 'border-red-500 focus:border-red-500' : ''}`}
                     placeholder="Enter your email address"
                     value={formData.email}
                     onChange={handleChange}
-                    required
                   />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
                 </div>
 
                 {/* Message Field */}
