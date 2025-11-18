@@ -289,3 +289,5 @@ agent_communication:
     message: "Comprehensive backend API testing completed successfully. All 7 API endpoints are working correctly with proper validation, error handling, and MongoDB integration. Created backend_test.py for future testing. No critical issues found."
   - agent: "main"
     message: "Backend testing complete ✅. Updated frontend components to use real API endpoints instead of mock data. HeroSection and Newsletter components now integrate with backend. Ready for frontend testing of form submissions and user flows. All mock data removed and replaced with axios API calls."
+  - agent: "main"
+    message: "Feature additions complete ✅: (1) Created new ConsultationForm component with Name, Email, and Message fields that redirects to Calendly. (2) Updated contact email from Brandon@jetset101.com to info@jetset101.com in mock.js and footer. (3) Added Instagram and TikTok social media buttons to footer with proper links and hover effects. Screenshots verify all changes are visible and properly styled. Need to test consultation form submission flow."
