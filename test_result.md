@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Test the JetSet 101 backend API endpoints that were just implemented"
+user_problem_statement: "Add consultation form with Name & Email fields, update contact email to info@jetset101.com, and add Instagram & TikTok social media buttons"
 
 backend:
   - task: "Health Check Endpoint"
