@@ -182,7 +182,7 @@ export const mockData = {
   ],
 
   contact: {
-    email: "Brandon@jetset101.com",
+    email: "info@jetset101.com",
     phone: "323.301.3533",
     address: "4810 Serrania Ave\nWoodland Hills, CA 91364"
   },
