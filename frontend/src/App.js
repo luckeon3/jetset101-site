@@ -22,8 +22,8 @@ const Home = () => {
     <div className="min-h-screen">
       <Header />
       <HeroSection />
-      <TwoPathsSection />
       <MembershipBenefits />
+      <TwoPathsSection />
       <AdvisorProgram />
       <HowItWorks />
       <Testimonials />
