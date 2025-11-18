@@ -93,8 +93,8 @@ export const MembershipBenefits = () => {
                   </div>
                   
                   <button 
-                    onClick={openCalendly}
-                    className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:opacity-90" 
+                    onClick={openStripeCheckout}
+                    className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:opacity-90 transform hover:scale-105" 
                     style={{ backgroundColor: '#003F5F' }}
                   >
                     Start My Plan
