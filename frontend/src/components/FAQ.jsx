@@ -52,7 +52,7 @@ export const FAQ = () => {
               Still Have Questions?
             </h3>
             <p className="text-gray-600 mb-6" style={{ fontFamily: 'Lato, sans-serif' }}>
-              Schedule a free consultation with Brandon to discuss your travel goals and advisor opportunities.
+              Schedule a free consultation with our team to discuss your travel goals and advisor opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
