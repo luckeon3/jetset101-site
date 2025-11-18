@@ -29,6 +29,7 @@ const Home = () => {
       <Testimonials />
       <OurStory />
       <FAQ />
+      <ConsultationForm />
       <Footer />
     </div>
   );
