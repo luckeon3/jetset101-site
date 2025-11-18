@@ -14,18 +14,41 @@ export const ConsultationForm = () => {
     email: '',
     message: ''
   });
+  const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error for this field when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    
+    return newErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email) {
-      toast.error('Please fill in your name and email');
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      toast.error('Please fill in all required fields correctly');
       return;
     }
 
@@ -41,8 +64,9 @@ export const ConsultationForm = () => {
         window.open(mockData.calendlyUrl, '_blank');
       }, 1000);
       
-      // Clear form
+      // Clear form and errors
       setFormData({ name: '', email: '', message: '' });
+      setErrors({});
     } catch (error) {
       toast.error('Something went wrong. Please try again.');
     } finally {
