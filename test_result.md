@@ -192,15 +192,18 @@ backend:
 frontend:
   - task: "Consultation Form with Name & Email Fields"
     implemented: true
-    working: "NA"
+    working: false
     file: "/app/frontend/src/components/ConsultationForm.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Created new ConsultationForm component with Name (required), Email (required), and Message (optional) fields. Form redirects to Calendly after capturing user information. Added to App.js before Footer. Styling matches existing design system with gradient button and proper spacing."
+      - working: false
+        agent: "testing"
+        comment: "CRITICAL ISSUE: Form validation not working properly. When Name or Email fields are empty, no validation error messages are shown to the user. However, form submission with valid data works correctly - shows success toast message 'Thank you! Redirecting to schedule your consultation...', redirects to correct Calendly URL (https://calendly.com/brandon-jetset101/), and clears form after submission. Message field is correctly optional. Form is responsive and visually styled properly. The validation logic exists in code but is not functioning as expected."
 
   - task: "Update Contact Email to info@jetset101.com"
     implemented: true
