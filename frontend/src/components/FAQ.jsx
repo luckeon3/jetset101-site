@@ -68,7 +68,7 @@ export const FAQ = () => {
                 className="px-6 py-3 rounded-lg font-semibold border-2 transition-all duration-200 hover:bg-[#003F5F] hover:text-white hover:border-[#003F5F]" 
                 style={{ borderColor: '#003F5F', color: '#003F5F' }}
               >
-                Email Brandon
+                Email Jetset 101 Representative
               </Button>
             </div>
             <p className="text-sm text-gray-500 mt-4">
