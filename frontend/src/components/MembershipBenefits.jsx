@@ -12,8 +12,8 @@ const iconMap = {
 };
 
 export const MembershipBenefits = () => {
-  const openCalendly = () => {
-    window.open(mockData.calendlyUrl, '_blank');
+  const openStripeCheckout = () => {
+    window.open(mockData.stripePaymentUrl, '_blank');
   };
 
   return (
