@@ -190,12 +190,48 @@ backend:
         comment: "GET /api/advisors/program-details endpoint working correctly. Returns comprehensive program details including commission rates, benefits, and training modules."
 
 frontend:
+  - task: "Consultation Form with Name & Email Fields"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/ConsultationForm.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Created new ConsultationForm component with Name (required), Email (required), and Message (optional) fields. Form redirects to Calendly after capturing user information. Added to App.js before Footer. Styling matches existing design system with gradient button and proper spacing."
+
+  - task: "Update Contact Email to info@jetset101.com"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/mock.js, /app/frontend/src/components/Footer.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Updated contact email from Brandon@jetset101.com to info@jetset101.com in mock.js. Email now displays correctly in footer and all contact sections. Verified via screenshot."
+
+  - task: "Add Instagram & TikTok Social Media Buttons"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/components/Footer.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added Instagram link (https://www.instagram.com/jetset101/) with gradient hover effect and TikTok link (https://www.tiktok.com/@jetset101) with TikTok icon SVG. Both buttons open in new tab with proper accessibility labels. Verified via screenshot in footer."
+
   - task: "Hero Section API Integration"
     implemented: true
     working: true
     file: "/app/frontend/src/components/HeroSection.jsx"
     stuck_count: 0
-    priority: "high"
+    priority: "medium"
     needs_retesting: false
     status_history:
       - working: "NA"
@@ -210,7 +246,7 @@ frontend:
     working: true
     file: "/app/frontend/src/components/Newsletter.jsx"
     stuck_count: 0
-    priority: "high"
+    priority: "medium"
     needs_retesting: false
     status_history:
       - working: "NA"
@@ -225,7 +261,7 @@ frontend:
     working: true
     file: "Multiple components"
     stuck_count: 0
-    priority: "high"
+    priority: "medium"
     needs_retesting: false
     status_history:
       - working: "NA"
