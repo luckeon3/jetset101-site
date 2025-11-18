@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import { mockData } from '../mock';
 
 export const Footer = () => {
