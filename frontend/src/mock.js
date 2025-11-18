@@ -106,18 +106,20 @@ export const mockData = {
 
   pricing: {
     monthly: {
-      price: 97,
+      price: 150,
       period: "month",
-      commitment: "6-month initial commitment",
+      commitment: "Flexible monthly membership",
       savings: "Start earning immediately"
     },
     annual: {
-      price: 997,
+      price: 1500,
       period: "year",
-      commitment: "Best Value - Save $167",
+      commitment: "Best Value - Save $300",
       savings: "Lock in professional pricing"
     }
   },
+  
+  stripePaymentUrl: "https://buy.stripe.com/bJebJ27BaePubtd0pYdfG00",
 
   founderStory: {
     name: "Brandon Torres",
