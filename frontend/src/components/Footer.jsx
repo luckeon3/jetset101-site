@@ -16,6 +16,10 @@ export const Footer = () => {
     window.open(mockData.calendlyUrl, '_blank');
   };
 
+  const sendEmail = () => {
+    window.location.href = `mailto:${mockData.contact.email}`;
+  };
+
   return (
     <footer className="bg-gradient-to-r from-[#1A1A1A] to-[#003F5F] text-white">
       {/* Main Footer Content */}
