@@ -243,9 +243,16 @@ select:focus {
 /* Hide Emergent Branding */
 [aria-label*="Made with Emergent"],
 [aria-label*="emergent"],
-a[href*="emergentagent.com"]:not([href*="customer-assets"]) {
+a[href*="emergentagent.com"]:not([href*="customer-assets"]),
+div[style*="position: fixed"][style*="bottom"][style*="right"],
+div[style*="z-index: 9999"],
+a[target="_blank"][rel*="noopener"][style*="position"],
+button[aria-label*="Made with"] {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
 }
