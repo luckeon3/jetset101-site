@@ -240,14 +240,18 @@ select:focus {
     }
 }
 
-/* Hide Emergent Branding */
+/* Hide Emergent Branding - Comprehensive Rules */
 [aria-label*="Made with Emergent"],
 [aria-label*="emergent"],
+[aria-label*="Made with"],
 a[href*="emergentagent.com"]:not([href*="customer-assets"]),
 div[style*="position: fixed"][style*="bottom"][style*="right"],
+div[style*="position: fixed"][style*="z-index"],
 div[style*="z-index: 9999"],
 a[target="_blank"][rel*="noopener"][style*="position"],
-button[aria-label*="Made with"] {
+button[aria-label*="Made with"],
+iframe[title*="emergent"],
+iframe[title*="Emergent"] {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
@@ -255,4 +259,18 @@ button[aria-label*="Made with"] {
     width: 0 !important;
     height: 0 !important;
     overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+/* Target fixed position elements in bottom right corner */
+body > div[style*="position: fixed"],
+body > a[style*="position: fixed"] {
+    display: none !important;
+}
+
+/* Additional fallback */
+*[class*="emergent"],
+*[id*="emergent"] {
+    display: none !important;
 }
