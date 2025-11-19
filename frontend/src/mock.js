@@ -66,7 +66,7 @@ export const mockData = {
       {
         step: 1,
         title: "Join the Community",
-        description: "Sign up for monthly ($150) or annual ($1500) membership",
+        description: "Sign up for 6-month ($899) or annual ($1499) membership",
         icon: "UserPlus"
       },
       {
