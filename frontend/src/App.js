@@ -11,7 +11,6 @@ import { MembershipBenefits } from "./components/MembershipBenefits";
 import { AdvisorProgram } from "./components/AdvisorProgram";
 import { HowItWorks } from "./components/HowItWorks";
 import { OurStory } from "./components/OurStory";
-import { Testimonials } from "./components/Testimonials";
 import { FAQ } from "./components/FAQ";
 import { ConsultationForm } from "./components/ConsultationForm";
 import { Footer } from "./components/Footer";
