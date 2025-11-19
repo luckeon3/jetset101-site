@@ -105,16 +105,16 @@ export const mockData = {
   },
 
   pricing: {
-    monthly: {
-      price: 150,
-      period: "month",
-      commitment: "Flexible monthly membership",
-      savings: "Start earning immediately"
+    sixMonth: {
+      price: 899,
+      period: "6 months",
+      commitment: "Perfect starter option",
+      savings: "Best way to get started"
     },
     annual: {
-      price: 1500,
+      price: 1499,
       period: "year",
-      commitment: "Best Value - Save $300",
+      commitment: "Best Value - Save $299",
       savings: "Lock in professional pricing"
     }
   },
