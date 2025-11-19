@@ -239,3 +239,13 @@ select:focus {
         padding: 3rem 0;
     }
 }
+
+/* Hide Emergent Branding */
+[aria-label*="Made with Emergent"],
+[aria-label*="emergent"],
+a[href*="emergentagent.com"]:not([href*="customer-assets"]) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
