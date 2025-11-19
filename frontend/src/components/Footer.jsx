@@ -166,11 +166,11 @@ export const Footer = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              onClick={openCalendly}
+              onClick={sendEmail}
               className="text-white font-semibold px-8 py-3"
               style={{ backgroundColor: '#00BFA6' }}
             >
-              Access Benefits
+              Request Consultation
             </Button>
             <Button
               onClick={openCalendly}
