@@ -25,7 +25,6 @@ const Home = () => {
       <TwoPathsSection />
       <AdvisorProgram />
       <HowItWorks />
-      <Testimonials />
       <OurStory />
       <FAQ />
       <ConsultationForm />
