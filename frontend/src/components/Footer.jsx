@@ -54,7 +54,7 @@ export const Footer = () => {
             
             <div className="flex space-x-4">
               <a
-                href="https://instagram.com/jetset.101"
+                href="https://www.instagram.com/jetset.101"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] transition-all duration-200 flex items-center justify-center"
@@ -63,7 +63,7 @@ export const Footer = () => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://tiktok.com/@jetset.101"
+                href="https://www.tiktok.com/@jetset.101"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-black transition-colors duration-200 flex items-center justify-center"
