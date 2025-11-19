@@ -139,7 +139,7 @@ export const mockData = {
     },
     {
       question: "What are the membership options?",
-      answer: "Monthly Membership: $150/month (flexible membership). Annual Membership: $1500/year (Best Value - Save $300 vs monthly)."
+      answer: "6-Month Membership: $899 for 6 months (Perfect starter option). Annual Membership: $1499/year (Best Value - Save $299)."
     },
     {
       question: "How does the travel advisor program work?",
