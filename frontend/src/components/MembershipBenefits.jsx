@@ -23,39 +23,14 @@ export const MembershipBenefits = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <Badge className="mb-4" style={{ backgroundColor: '#003F5F' }}>
-              Membership Benefits
+              Membership Pricing
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
-              Travel More, Pay Less
+              Choose Your Plan
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>
-              Our exclusive membership unlocks incredible savings on all your travel needs, making luxury travel accessible to everyone.
+              Select the membership option that works best for you
             </p>
-          </div>
-
-          {/* Benefits Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {mockData.membershipBenefits.map((benefit, index) => {
-              const IconComponent = iconMap[benefit.icon];
-              return (
-                <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#003F5F' }}>
-                      <IconComponent className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-4" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
-                      {benefit.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>
-                      {benefit.description}
-                    </p>
-                    <Badge variant="secondary" className="text-sm font-semibold" style={{ backgroundColor: '#00BFA6', color: 'white' }}>
-                      {benefit.savings}
-                    </Badge>
-                  </CardContent>
-                </Card>
-              );
-            })}
           </div>
 
           {/* Pricing Cards - Show First */}
