@@ -58,39 +58,24 @@ export const MembershipBenefits = () => {
             })}
           </div>
 
-          {/* Pricing Cards */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Monthly Plan */}
+          {/* Pricing Cards - Show First */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+            {/* 6-Month Plan */}
             <Card className="relative border-2 border-gray-200 hover:border-[#003F5F] transition-all duration-300">
               <CardContent className="p-8">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold mb-2" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
-                    Monthly Membership
+                    6-Month Membership
                   </h3>
                   <div className="flex items-center justify-center mb-4">
                     <span className="text-4xl font-bold" style={{ color: '#003F5F' }}>
-                      ${mockData.pricing.monthly.price}
+                      ${mockData.pricing.sixMonth.price}
                     </span>
-                    <span className="text-gray-500 ml-2">/{mockData.pricing.monthly.period}</span>
+                    <span className="text-gray-500 ml-2">/{mockData.pricing.sixMonth.period}</span>
                   </div>
                   <p className="text-sm text-gray-600 mb-6">
-                    {mockData.pricing.monthly.commitment}
+                    {mockData.pricing.sixMonth.commitment}
                   </p>
-                  
-                  <div className="space-y-3 mb-8">
-                    {[
-                      'Up to 75% off flights',
-                      '40-70% off hotels',
-                      'Cruises from $50/day',
-                      'Weekly deal roundups',
-                      'Community access'
-                    ].map((feature, index) => (
-                      <div key={index} className="flex items-center">
-                        <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00BFA6' }} />
-                        <span className="text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
                   
                   <button 
                     onClick={openStripeCheckout}
@@ -125,22 +110,6 @@ export const MembershipBenefits = () => {
                     {mockData.pricing.annual.commitment}
                   </p>
                   
-                  <div className="space-y-3 mb-8">
-                    {[
-                      'Up to 75% off flights',
-                      '40-70% off hotels',
-                      'Cruises from $50/day',
-                      'Weekly deal roundups',
-                      'Community access',
-                      'Priority support'
-                    ].map((feature, index) => (
-                      <div key={index} className="flex items-center">
-                        <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00BFA6' }} />
-                        <span className="text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
                   <button 
                     onClick={openStripeCheckout}
                     className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:opacity-90 transform hover:scale-105" 
@@ -151,6 +120,26 @@ export const MembershipBenefits = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Benefits Details - Show Below Pricing */}
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-center mb-8" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
+              What's Included
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                '40-70% off hotels',
+                'Cruises from $50/day',
+                'Exclusive membership benefits',
+                'Community access'
+              ].map((feature, index) => (
+                <div key={index} className="flex items-center p-4 bg-white rounded-lg shadow-sm">
+                  <CheckCircle className="w-6 h-6 mr-3 flex-shrink-0" style={{ color: '#00BFA6' }} />
+                  <span className="text-gray-700 font-medium">{feature}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Trust Indicators */}
