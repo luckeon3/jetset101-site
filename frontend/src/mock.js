@@ -106,7 +106,7 @@ export const mockData = {
 
   pricing: {
     sixMonth: {
-      price: 899,
+      price: 849,
       period: "6 months",
       commitment: "Perfect starter option",
       savings: "Best way to get started"
@@ -119,7 +119,10 @@ export const mockData = {
     }
   },
   
-  stripePaymentUrl: "https://buy.stripe.com/bJebJ27BaePubtd0pYdfG00",
+  stripePaymentUrl: {
+    sixMonth: "https://buy.stripe.com/eVq00k6x622Ibtda0ydfG01",
+    annual: "https://buy.stripe.com/bJebJ27BaePubtd0pYdfG00"
+  },
 
   founderStory: {
     name: "Brandon Torres",
