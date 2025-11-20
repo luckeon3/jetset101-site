@@ -244,14 +244,19 @@ select:focus {
 [aria-label*="Made with Emergent"],
 [aria-label*="emergent"],
 [aria-label*="Made with"],
+[aria-label*="Emergent"],
 a[href*="emergentagent.com"]:not([href*="customer-assets"]),
 div[style*="position: fixed"][style*="bottom"][style*="right"],
 div[style*="position: fixed"][style*="z-index"],
 div[style*="z-index: 9999"],
+div[style*="z-index:9999"],
 a[target="_blank"][rel*="noopener"][style*="position"],
 button[aria-label*="Made with"],
+button[aria-label*="Emergent"],
 iframe[title*="emergent"],
-iframe[title*="Emergent"] {
+iframe[title*="Emergent"],
+img[alt*="Emergent"],
+img[alt*="emergent"] {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
@@ -261,16 +266,27 @@ iframe[title*="Emergent"] {
     overflow: hidden !important;
     position: absolute !important;
     left: -9999px !important;
+    top: -9999px !important;
 }
 
 /* Target fixed position elements in bottom right corner */
 body > div[style*="position: fixed"],
-body > a[style*="position: fixed"] {
+body > div[style*="position:fixed"],
+body > a[style*="position: fixed"],
+body > a[style*="position:fixed"],
+#root > div[style*="position: fixed"],
+#root > div[style*="position:fixed"] {
     display: none !important;
 }
 
-/* Additional fallback */
+/* Additional fallback - be more aggressive */
 *[class*="emergent"],
-*[id*="emergent"] {
+*[class*="Emergent"],
+*[id*="emergent"],
+*[id*="Emergent"],
+div[class*="branding"],
+div[class*="badge"],
+a[class*="branding"],
+a[class*="badge"] {
     display: none !important;
 }
