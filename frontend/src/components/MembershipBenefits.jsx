@@ -12,8 +12,11 @@ const iconMap = {
 };
 
 export const MembershipBenefits = () => {
-  const openStripeCheckout = () => {
-    window.open(mockData.stripePaymentUrl, '_blank');
+  const openStripeCheckout = (plan) => {
+    const url = plan === 'sixMonth' 
+      ? mockData.stripePaymentUrl.sixMonth 
+      : mockData.stripePaymentUrl.annual;
+    window.open(url, '_blank');
   };
 
   return (
