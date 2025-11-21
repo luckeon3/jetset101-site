@@ -49,8 +49,8 @@ export const mockData = {
     },
     {
       icon: "Headphones",
-      title: "Marriott Stars Program",
-      description: "Access to exclusive Marriott Stars benefits and enhanced commissions",
+      title: "Marriott Preferred Agency",
+      description: "Access to exclusive Marriott Preferred Agency benefits and enhanced commissions",
       earning: "VIP hotel access"
     },
     {
