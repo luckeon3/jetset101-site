@@ -122,7 +122,7 @@ export const mockData = {
   },
   
   stripePaymentUrl: {
-    sixMonth: "https://buy.stripe.com/28E3cw1cM36M7cXfkSdfG04n",
+    sixMonth: "https://buy.stripe.com/28E3cw1cM36M7cXfkSdfG04",
     annual: "https://buy.stripe.com/dRm3cw8FecHm8h15KidfG05"
   },
 
