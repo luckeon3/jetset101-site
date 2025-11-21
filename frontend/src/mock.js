@@ -107,23 +107,23 @@ export const mockData = {
   pricing: {
     sixMonth: {
       originalPrice: 949,
-      price: 849,
+      price: 499,
       period: "6 months",
       commitment: "Perfect starter option",
       savings: "Best way to get started"
     },
     annual: {
       originalPrice: 1599,
-      price: 1500,
+      price: 999,
       period: "year",
-      commitment: "Best Value - Save $299",
+      commitment: "Best Value - Save $600",
       savings: "Lock in professional pricing"
     }
   },
   
   stripePaymentUrl: {
-    sixMonth: "https://buy.stripe.com/eVq00k6x622Ibtda0ydfG01",
-    annual: "https://buy.stripe.com/bJebJ27BaePubtd0pYdfG00"
+    sixMonth: "https://buy.stripe.com/28E3cw1cM36M7cXfkSdfG04n",
+    annual: "https://buy.stripe.com/dRm3cw8FecHm8h15KidfG05"
   },
 
   founderStory: {
