@@ -22,8 +22,6 @@ const Home = () => {
       <MembershipBenefits />
       <TwoPathsSection />
       <AdvisorProgram />
-      <HowItWorks />
-      <OurStory />
       <FAQ />
       <ConsultationForm />
       <Footer />
