@@ -290,3 +290,23 @@ a[class*="branding"],
 a[class*="badge"] {
     display: none !important;
 }
+
+/* Nuclear option - hide ALL fixed position elements in bottom corners */
+body > *[style*="position: fixed"],
+#root > *[style*="position: fixed"],
+div[style*="position: fixed"][style*="bottom"],
+div[style*="position:fixed"][style*="bottom"],
+a[style*="position: fixed"][style*="bottom"],
+a[style*="position:fixed"][style*="bottom"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hide by common z-index values used for badges */
+*[style*="z-index: 999"],
+*[style*="z-index: 9999"],
+*[style*="z-index:999"],
+*[style*="z-index:9999"] {
+    display: none !important;
+}
