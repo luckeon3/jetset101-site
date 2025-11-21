@@ -106,13 +106,15 @@ export const mockData = {
 
   pricing: {
     sixMonth: {
+      originalPrice: 949,
       price: 849,
       period: "6 months",
       commitment: "Perfect starter option",
       savings: "Best way to get started"
     },
     annual: {
-      price: 1499,
+      originalPrice: 1599,
+      price: 1500,
       period: "year",
       commitment: "Best Value - Save $299",
       savings: "Lock in professional pricing"
