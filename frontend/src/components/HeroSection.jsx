@@ -52,7 +52,7 @@ export const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?crop=entropy&cs=srgb&fm=jpg&q=85"
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?crop=entropy&cs=srgb&fm=jpg&q=85"
           alt="JetSet 101 Hero"
           className="w-full h-full object-cover"
         />
