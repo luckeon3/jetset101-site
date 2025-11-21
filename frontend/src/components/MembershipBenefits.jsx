@@ -39,9 +39,9 @@ export const MembershipBenefits = () => {
           {/* Pricing Cards - Show First */}
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
             {/* 6-Month Plan */}
-            <Card className="relative border-2 border-gray-200 hover:border-[#003F5F] transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="text-center">
+            <Card className="relative border-2 border-gray-200 hover:border-[#003F5F] transition-all duration-300 flex flex-col">
+              <CardContent className="p-8 flex-1 flex flex-col">
+                <div className="text-center flex-1 flex flex-col">
                   <h3 className="text-2xl font-bold mb-2" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
                     6-Month Membership
                   </h3>
@@ -51,12 +51,14 @@ export const MembershipBenefits = () => {
                     </span>
                     <span className="text-gray-500 ml-2">/{mockData.pricing.sixMonth.period}</span>
                   </div>
-                  <p className="text-sm text-gray-600 mb-2">
-                    {mockData.pricing.sixMonth.commitment}
-                  </p>
-                  <p className="text-xs text-gray-500 italic mb-6">
-                    *Not applicable for Black Friday promotion
-                  </p>
+                  <div className="flex-1">
+                    <p className="text-sm text-gray-600 mb-2">
+                      {mockData.pricing.sixMonth.commitment}
+                    </p>
+                    <p className="text-xs text-gray-500 italic mb-6">
+                      *Not applicable for Black Friday promotion
+                    </p>
+                  </div>
                   
                   <button 
                     onClick={() => openStripeCheckout('sixMonth')}
@@ -70,14 +72,14 @@ export const MembershipBenefits = () => {
             </Card>
 
             {/* Annual Plan */}
-            <Card className="relative border-2 border-[#00BFA6] shadow-xl">
+            <Card className="relative border-2 border-[#00BFA6] shadow-xl flex flex-col">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <Badge className="px-4 py-2 text-sm font-bold" style={{ backgroundColor: '#00BFA6' }}>
                   BEST VALUE
                 </Badge>
               </div>
-              <CardContent className="p-8">
-                <div className="text-center">
+              <CardContent className="p-8 flex-1 flex flex-col">
+                <div className="text-center flex-1 flex flex-col">
                   <h3 className="text-2xl font-bold mb-2" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
                     Annual Membership
                   </h3>
@@ -87,9 +89,11 @@ export const MembershipBenefits = () => {
                     </span>
                     <span className="text-gray-500 ml-2">/{mockData.pricing.annual.period}</span>
                   </div>
-                  <p className="text-sm font-semibold mb-6" style={{ color: '#00BFA6' }}>
-                    {mockData.pricing.annual.commitment}
-                  </p>
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold mb-6" style={{ color: '#00BFA6' }}>
+                      {mockData.pricing.annual.commitment}
+                    </p>
+                  </div>
                   
                   <button 
                     onClick={() => openStripeCheckout('annual')}
