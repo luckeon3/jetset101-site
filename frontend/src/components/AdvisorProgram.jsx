@@ -89,7 +89,7 @@ export const AdvisorProgram = () => {
               Ready to Start Your Travel Business?
             </h3>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Join our community of successful travel advisors earning $1,000-5,000+ monthly with IATA accreditation and Marriott Stars access.
+              Join our community of successful travel advisors earning $1,000-5,000+ monthly with IATA accreditation and Marriott Preferred Agency access.
             </p>
             <Button
               size="lg"
