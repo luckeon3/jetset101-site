@@ -144,7 +144,7 @@ export const mockData = {
     },
     {
       question: "What are the membership options?",
-      answer: "6-Month Membership: $499 for 6 months (@travelmorekel promo price - regularly $949). Annual Membership: $999/year (@travelmorekel promo price - regularly $1599, Best Value!)."
+      answer: "6-Month Membership: $649 for 6 months (@travelmorekel promo price - regularly $949). Annual Membership: $999/year (@travelmorekel promo price - regularly $1599, Best Value!)."
     },
     {
       question: "How does the travel advisor program work?",
