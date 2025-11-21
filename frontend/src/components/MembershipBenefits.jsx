@@ -51,8 +51,11 @@ export const MembershipBenefits = () => {
                     </span>
                     <span className="text-gray-500 ml-2">/{mockData.pricing.sixMonth.period}</span>
                   </div>
-                  <p className="text-sm text-gray-600 mb-6">
+                  <p className="text-sm text-gray-600 mb-2">
                     {mockData.pricing.sixMonth.commitment}
+                  </p>
+                  <p className="text-xs text-gray-500 italic mb-6">
+                    *Not applicable for Black Friday promotion
                   </p>
                   
                   <button 
