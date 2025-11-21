@@ -107,12 +107,6 @@ export const HeroSection = () => {
               />
               <span className="text-sm font-medium">IATA Certified</span>
             </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-yellow-400">NO MLM</div>
-            </div>
-            <div className="text-center">
-              <div className="text-lg font-bold text-white">No Minimums</div>
-            </div>
           </div>
 
           {/* Quick Signup Forms */}
