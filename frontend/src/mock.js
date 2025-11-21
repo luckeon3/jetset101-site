@@ -146,7 +146,7 @@ export const mockData = {
     },
     {
       question: "How does the travel advisor program work?",
-      answer: "Our travel advisors earn an 80/20 commission split (80% to you) with IATA accreditation, Marriott Stars access, and ongoing community support."
+      answer: "Our travel advisors earn an 80/20 commission split (80% to you) with IATA accreditation, Marriott Preferred Agency access, and ongoing community support."
     },
     {
       question: "Is there a refund policy?",
