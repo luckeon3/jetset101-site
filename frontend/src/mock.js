@@ -175,7 +175,7 @@ export const mockData = {
       name: "Lisa Rodriguez",
       role: "Travel Advisor",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWx8ZW58MHx8fHwxNzU2NjU0NDc2fDA&ixlib=rb-4.1.0&q=85",
-      testimonial: "The IATA accreditation and Marriott Stars program gave me everything I needed to succeed. Now I help others travel better while building my own profitable business."
+      testimonial: "The IATA accreditation and Marriott Preferred Agency program gave me everything I needed to succeed. Now I help others travel better while building my own profitable business."
     }
   ],
 
