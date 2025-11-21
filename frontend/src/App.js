@@ -9,8 +9,6 @@ import { HeroSection } from "./components/HeroSection";
 import { TwoPathsSection } from "./components/TwoPathsSection";
 import { MembershipBenefits } from "./components/MembershipBenefits";
 import { AdvisorProgram } from "./components/AdvisorProgram";
-import { HowItWorks } from "./components/HowItWorks";
-import { OurStory } from "./components/OurStory";
 import { FAQ } from "./components/FAQ";
 import { ConsultationForm } from "./components/ConsultationForm";
 import { Footer } from "./components/Footer";
