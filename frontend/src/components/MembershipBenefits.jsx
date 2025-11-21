@@ -45,18 +45,20 @@ export const MembershipBenefits = () => {
                   <h3 className="text-2xl font-bold mb-2" style={{ color: '#1A1A1A', fontFamily: 'Poppins, sans-serif' }}>
                     6-Month Membership
                   </h3>
-                  <div className="flex items-center justify-center mb-4">
-                    <span className="text-4xl font-bold" style={{ color: '#003F5F' }}>
-                      ${mockData.pricing.sixMonth.price}
-                    </span>
-                    <span className="text-gray-500 ml-2">/{mockData.pricing.sixMonth.period}</span>
+                  <div className="mb-4">
+                    <div className="flex items-center justify-center gap-3">
+                      <span className="text-2xl font-bold text-gray-400 line-through">
+                        ${mockData.pricing.sixMonth.originalPrice}
+                      </span>
+                      <span className="text-4xl font-bold" style={{ color: '#003F5F' }}>
+                        ${mockData.pricing.sixMonth.price}
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-500 italic mt-1">Black Friday Price</p>
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm text-gray-600 mb-2">
+                    <p className="text-sm text-gray-600 mb-6">
                       {mockData.pricing.sixMonth.commitment}
-                    </p>
-                    <p className="text-xs text-gray-500 italic mb-6">
-                      *Not applicable for Black Friday promotion
                     </p>
                   </div>
                   
