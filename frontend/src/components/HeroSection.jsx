@@ -52,8 +52,8 @@ export const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1555896783-6ef15eb5f931?crop=entropy&cs=srgb&fm=jpg&q=85"
-          alt="JetSet 101 Hero"
+          src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?crop=entropy&cs=srgb&fm=jpg&q=85"
+          alt="JetSet 101 Hero - Disney Cruise"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/50"></div>
