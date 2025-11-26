@@ -98,6 +98,14 @@ export const HeroSection = () => {
               />
               <span className="text-sm font-medium">IATA Certified</span>
             </div>
+            <div className="flex items-center">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_travel-web-handoff/artifacts/aga7wx8d_money%20back.jpeg" 
+                alt="Money Back Guarantee" 
+                className="h-8 w-auto mr-2"
+              />
+              <span className="text-sm font-medium">Money Back Guarantee</span>
+            </div>
           </div>
         </div>
       </div>
