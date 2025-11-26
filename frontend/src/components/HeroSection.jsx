@@ -52,7 +52,7 @@ export const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://customer-assets.emergentagent.com/job_travel-web-handoff/artifacts/eeg4mpe5_IMG_3663.JPG"
+          src="https://customer-assets.emergentagent.com/job_travel-web-handoff/artifacts/sl7fxhed_IMG_3661.WEBP"
           alt="JetSet 101 Hero - Disney Cruise"
           className="w-full h-full object-cover"
         />
