@@ -89,7 +89,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-8 mb-8 text-white/80">
+          <div className="flex flex-wrap justify-center items-center gap-8 text-white/80">
             <div className="flex items-center">
               <img 
                 src="https://customer-assets.emergentagent.com/job_travel-advisor-hub/artifacts/8nnhc2f1_iatan-pms541-300.jpg" 
@@ -98,33 +98,6 @@ export const HeroSection = () => {
               />
               <span className="text-sm font-medium">IATA Certified</span>
             </div>
-          </div>
-
-          {/* Single Signup Form - Member Perks Only */}
-          <div className="max-w-2xl mx-auto">
-            {/* Membership Quick Signup */}
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
-              <form onSubmit={handleMembershipSignup} className="space-y-4">
-                <h3 className="text-white font-bold text-lg mb-2 text-center">Unlock Exclusive Member Perks</h3>
-                <div className="flex gap-2">
-                  <Input
-                    type="email"
-                    placeholder="Your email address"
-                    value={membershipEmail}
-                    onChange={(e) => setMembershipEmail(e.target.value)}
-                    className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
-                    required
-                  />
-                  <Button
-                    type="submit"
-                    disabled={loading.membership}
-                    className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold whitespace-nowrap px-6"
-                  >
-                    {loading.membership ? 'Connecting...' : 'Unlock Member Perks'}
-                  </Button>
-                </div>
-              </form>
-            </Card>
           </div>
         </div>
       </div>
