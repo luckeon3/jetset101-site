@@ -82,7 +82,7 @@ export const HeroSection = () => {
                 className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-4 text-lg rounded-full transition-all duration-200 transform hover:scale-105"
                 onClick={() => document.querySelector('#membership').scrollIntoView({behavior: 'smooth'})}
               >
-                Unlock Member Perks
+                Black Friday Promo
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
