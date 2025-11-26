@@ -75,23 +75,14 @@ export const HeroSection = () => {
               </span>
             </p>
             
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            {/* CTA Button - Single Button Only */}
+            <div className="flex justify-center mb-12">
               <Button
                 size="lg"
                 className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-4 text-lg rounded-full transition-all duration-200 transform hover:scale-105"
                 onClick={() => document.querySelector('#membership').scrollIntoView({behavior: 'smooth'})}
               >
                 Unlock Member Perks
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-black font-bold px-8 py-4 text-lg rounded-full transition-all duration-200 transform hover:scale-105"
-                onClick={openCalendly}
-              >
-                Become an Advisor
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
