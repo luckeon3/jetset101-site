@@ -164,20 +164,13 @@ export const Footer = () => {
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
             Join our IATA-accredited platform for exclusive industry access and advisor opportunities
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button
               onClick={sendEmail}
               className="text-white font-semibold px-8 py-3"
               style={{ backgroundColor: '#00BFA6' }}
             >
               Request Consultation
-            </Button>
-            <Button
-              onClick={openCalendly}
-              variant="outline"
-              className="border-[#00BFA6] text-[#00BFA6] hover:bg-[#00BFA6] hover:text-white px-8 py-3"
-            >
-              Become Advisor
             </Button>
           </div>
         </div>
