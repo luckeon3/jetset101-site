@@ -71,7 +71,7 @@ export const HeroSection = () => {
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
               <span style={{ fontFamily: 'Lato, sans-serif' }}>
-                Jetset 101 gives you insider access to travel perks and tools to turn travel in a lifestyle
+                JetSet 101 gives you insider access to exclusive travel perks and the tools to turn travel into a lifestyle
               </span>
             </p>
             
