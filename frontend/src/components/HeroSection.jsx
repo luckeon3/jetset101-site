@@ -109,12 +109,12 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Quick Signup Forms */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {/* Single Signup Form - Member Perks Only */}
+          <div className="max-w-2xl mx-auto">
             {/* Membership Quick Signup */}
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
               <form onSubmit={handleMembershipSignup} className="space-y-4">
-                <h3 className="text-white font-bold text-lg mb-2">Quick Access to Member Perks</h3>
+                <h3 className="text-white font-bold text-lg mb-2 text-center">Unlock Exclusive Member Perks</h3>
                 <div className="flex gap-2">
                   <Input
                     type="email"
@@ -127,33 +127,9 @@ export const HeroSection = () => {
                   <Button
                     type="submit"
                     disabled={loading.membership}
-                    className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold whitespace-nowrap"
+                    className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold whitespace-nowrap px-6"
                   >
-                    {loading.membership ? 'Connecting...' : 'Get Access'}
-                  </Button>
-                </div>
-              </form>
-            </Card>
-
-            {/* Advisor Quick Signup */}
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6">
-              <form onSubmit={handleAdvisorSignup} className="space-y-4">
-                <h3 className="text-white font-bold text-lg mb-2">Start Your Advisor Journey</h3>
-                <div className="flex gap-2">
-                  <Input
-                    type="email"
-                    placeholder="Your email address"
-                    value={advisorEmail}
-                    onChange={(e) => setAdvisorEmail(e.target.value)}
-                    className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
-                    required
-                  />
-                  <Button
-                    type="submit"
-                    disabled={loading.advisor}
-                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold whitespace-nowrap"
-                  >
-                    {loading.advisor ? 'Connecting...' : 'Apply Now'}
+                    {loading.membership ? 'Connecting...' : 'Unlock Member Perks'}
                   </Button>
                 </div>
               </form>
