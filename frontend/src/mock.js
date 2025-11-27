@@ -147,6 +147,10 @@ export const mockData = {
       answer: "6-Month Membership: $649 for 6 months (@travelmorekel promo price - regularly $949). Annual Membership: $999/year (@travelmorekel promo price - regularly $1599, Best Value!)."
     },
     {
+      question: "Is JetSet 101 a multi-level marketing (MLM) company?",
+      answer: "No, JetSet 101 is NOT an MLM. We are a legitimate travel membership and advisory platform. There is absolutely no requirement to recruit or bring other members on board. You don't profit from colleagues' income or build downlines. Our travel advisors earn 80% commission solely from their own bookings and client relationships. Your success is based entirely on your own efforts and the value you provide to your clients, not on recruiting others."
+    },
+    {
       question: "How does the travel advisor program work?",
       answer: "Our travel advisors earn an 80/20 commission split (80% to you) with IATA accreditation, Marriott Preferred Agency access, and ongoing community support."
     },
