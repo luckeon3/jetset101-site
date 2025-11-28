@@ -144,7 +144,7 @@ export const mockData = {
     },
     {
       question: "What are the membership options?",
-      answer: "6-Month Membership: $649 for 6 months (@travelmorekel promo price - regularly $949). Annual Membership: $999/year (@travelmorekel promo price - regularly $1599, Best Value!)."
+      answer: "6-Month Membership: $749 for 6 months (regularly $949). Annual Membership: $1500/year (regularly $1599, Best Value - Includes Free Disney Cruise!)."
     },
     {
       question: "Is JetSet 101 a multi-level marketing (MLM) company?",
