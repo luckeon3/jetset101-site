@@ -94,7 +94,7 @@ export const MembershipBenefits = () => {
                         ${mockData.pricing.annual.price}
                       </span>
                     </div>
-                    <p className="text-xs text-red-600 italic mt-1">@travelmorekel promo price</p>
+                    <p className="text-xs text-red-600 italic mt-1">Free Disney Cruise Applicable</p>
                   </div>
                   <div className="flex-1">
                     <p className="text-sm font-semibold mb-6" style={{ color: '#00BFA6' }}>
