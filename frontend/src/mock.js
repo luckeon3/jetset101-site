@@ -148,7 +148,7 @@ export const mockData = {
     },
     {
       question: "What are the membership options?",
-      answer: "6-Month Membership: $749 for 6 months (regularly $949). Annual Membership: $1500/year (regularly $1599, Best Value - Includes Free Disney Cruise!)."
+      answer: "6-Month Membership: $125/month (billed bi-annually, regularly $949). Annual Membership: $83/month (billed annually, regularly $1599 - Best Value!)."
     },
     {
       question: "Is JetSet 101 a multi-level marketing (MLM) company?",
