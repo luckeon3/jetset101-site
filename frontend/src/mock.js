@@ -107,16 +107,20 @@ export const mockData = {
   pricing: {
     sixMonth: {
       originalPrice: 949,
-      price: 749,
+      monthlyPrice: 125,
+      billingFrequency: "Billed bi-annually",
+      totalPrice: 750,
       period: "6 months",
       commitment: "Perfect starter option",
       savings: "Best way to get started"
     },
     annual: {
       originalPrice: 1599,
-      price: 1500,
+      monthlyPrice: 83,
+      billingFrequency: "Billed annually",
+      totalPrice: 996,
       period: "year",
-      commitment: "Best Value - Save $99",
+      commitment: "Best Value",
       savings: "Lock in professional pricing"
     }
   },
