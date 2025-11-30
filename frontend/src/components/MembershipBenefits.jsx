@@ -88,6 +88,9 @@ export const MembershipBenefits = () => {
                   </h3>
                   <div className="mb-4">
                     <div className="flex items-center justify-center gap-3">
+                      <span className="text-2xl font-bold text-gray-400 line-through">
+                        $134
+                      </span>
                       <span className="text-4xl font-bold" style={{ color: '#00BFA6' }}>
                         ${mockData.pricing.annual.monthlyPrice}
                       </span>
