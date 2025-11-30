@@ -10,7 +10,6 @@ export const Header = () => {
     { label: 'Home', href: '#hero' },
     { label: 'Travel Perks', href: '#membership' },
     { label: 'Become an Advisor', href: '#advisor' },
-    { label: 'Member Stories', href: '#testimonials' },
     { label: 'FAQs', href: '#faq' }
   ];
 
