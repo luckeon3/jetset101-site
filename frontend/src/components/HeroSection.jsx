@@ -75,14 +75,14 @@ export const HeroSection = () => {
               </span>
             </p>
             
-            {/* CTA Buttons - Disney Cruise Promo & Consultation */}
+            {/* CTA Buttons - Membership Rates & Consultation */}
             <div className="flex flex-col items-center gap-4 mb-12">
               <Button
                 size="lg"
                 className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-4 text-lg rounded-full transition-all duration-200 transform hover:scale-105"
                 onClick={() => document.querySelector('#membership').scrollIntoView({behavior: 'smooth'})}
               >
-                Disney Cruise $40 Per Night
+                Membership Rates
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button
